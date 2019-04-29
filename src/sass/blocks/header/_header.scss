@@ -1,41 +1,72 @@
 .site-header {
-  display: flex;
-
-  background-color: #FFB343;
-  height: 50px;
-
-  &__logo { 
-    &-wrapper {
-      display: flex;
-      align-items: center;
-      
-      text-decoration: none;
-      margin: 0 15px;
-      color: #2e2e2e;
-
-      &:hover {
-        color: #FFF;
-      }
-    }
-    &-icon {
-      display: flex;
-      fill: currentColor;
-    }
-    &-text {
-      font-size: 16px;
-      font-weight: 600;
-
-      margin-left: 5px;
-    }
-  }
-
-  &__search-wrapper {
     display: flex;
-  }
+    align-items: center;
 
-  &__search-input {
-  }
+    // background-color: #ffdb4d;
+    // background-color: #ffb343;
+    background-color: #fff;
+    height: 65px;
 
-  &__search-button {
-  }
+    &__logo {
+        &-wrapper {
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+            margin: 0 20px;
+            color: #2e2e2e;
+
+            &:hover {
+                color: #ffb343;
+                transition: 0.3s;
+            }
+        }
+
+        &-icon {
+            display: flex;
+            fill: currentColor;
+        }
+
+        &-text {
+            font-size: 16px;
+            font-weight: 600;
+
+            margin-left: 5px;
+        }
+    }
+
+    &__search-wrapper {
+        display: flex;
+
+        height: 35px;
+    }
+
+    &__search-input {
+        width: 350px;
+        padding: 5px 10px;
+
+        color: #2e2e2e;
+        font-size: 14px;
+
+        border: 2px solid #ffb343;
+        border-radius: 3px 0 0 3px;
+    }
+
+    &__search-button {
+        position: relative;
+        width: 100px;
+
+        background-color: #ffb343;
+        color: #fff;
+
+        font-size: 14px;
+        font-weight: 500;
+
+        border-radius: 0 3px 3px 0;
+
+        &:hover {
+            color: #2e2e2e;
+            transition: 0.3s;
+        }
+    }
 }
