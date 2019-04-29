@@ -1,72 +1,129 @@
 .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #fff;
+  height: 65px;
+
+  &__left-side {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  &__right-side {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  &__wrapper {
     display: flex;
     align-items: center;
+    text-decoration: none;
+  }
 
-    // background-color: #ffdb4d;
-    // background-color: #ffb343;
-    background-color: #fff;
-    height: 65px;
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
 
-    &__logo {
-        &-wrapper {
-            display: flex;
-            align-items: center;
+    margin-left: 5px;
+  }
 
-            text-decoration: none;
-            margin: 0 20px;
-            color: #2e2e2e;
+  // logo
+  &__logo {
+    &-wrapper {
+      margin-right: 20px;
+      color: $gray;
 
-            &:hover {
-                color: #ffb343;
-                transition: 0.3s;
-            }
-        }
-
-        &-icon {
-            display: flex;
-            fill: currentColor;
-        }
-
-        &-text {
-            font-size: 16px;
-            font-weight: 600;
-
-            margin-left: 5px;
-        }
+      &:hover {
+        color: $orange;
+        transition: 0.3s;
+      }
     }
 
-    &__search-wrapper {
-        display: flex;
+    &-icon {
+      fill: currentColor;
+    }
+  }
 
-        height: 35px;
+  // search
+  &__search-wrapper {
+    display: flex;
+    height: 35px;
+  }
+
+  &__search-input {
+    width: 350px;
+    padding: 5px 10px;
+
+    color: $gray;
+    font-size: 14px;
+
+    border: 2px solid $orange;
+    border-radius: 3px 0 0 3px;
+  }
+
+  &__search-button {
+    position: relative;
+    width: 100px;
+
+    background-color: $orange;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 0 3px 3px 0;
+
+    &:hover {
+      color: $gray;
+      transition: 0.3s;
+    }
+  }
+
+  // favorite
+  &__favorite {
+    display: flex;
+
+    &-wrapper {
+      padding: 0 15px;
+
+      color: $gray;
+
+      &:hover {
+        color: $orange;
+        transition: 0.3s;
+      }
     }
 
-    &__search-input {
-        width: 350px;
-        padding: 5px 10px;
+    &-icon {
+      fill: currentColor;
+    }
+  }
 
-        color: #2e2e2e;
-        font-size: 14px;
+  // add game
+  &__add-game {
+    display: flex;
 
-        border: 2px solid #ffb343;
-        border-radius: 3px 0 0 3px;
+    &-button {
+      display: flex;
+      align-items: center;
+
+      // padding: 5px 5px 5px 8px;
+      padding: 4px 1px 4px 6px;
+      border-radius: 3px;
+
+      color: #fff;
+      background-color: $orange;
+
+      &:hover {
+        background-color: $gray;
+        transition: 0.3s;
+      }
     }
 
-    &__search-button {
-        position: relative;
-        width: 100px;
-
-        background-color: #ffb343;
-        color: #fff;
-
-        font-size: 14px;
-        font-weight: 500;
-
-        border-radius: 0 3px 3px 0;
-
-        &:hover {
-            color: #2e2e2e;
-            transition: 0.3s;
-        }
+    &-icon {
+      fill: currentColor;
     }
+  }
 }

@@ -1,47 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" media="all" href="css/app.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Template</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff">
-  <meta name="format-detection" content="telephone=no">
-  <link rel="stylesheet" media="all" href="css/app.css">
-</head>
+  <body>
+    <!-- BEGIN header -->
+    <header class="site-header">
+      <div class="site-header__left-side">
+        <!-- logo -->
+        <a
+          href="#"
+          class="site-header__wrapper site-header__logo-wrapper"
+          aria-label="Логотип gameCRUD"
+        >
+          <svg class="site-header__logo-icon" width="32" height="32">
+            <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
+          </svg>
+          <span class="site-header__text">
+            <strong>GAME-CRUD</strong>
+          </span>
+        </a>
+        <!-- search -->
+        <form class="site-header__search-wrapper" action="/search">
+          <input
+            class="site-header__search-input"
+            type="text"
+            placeholder="Введите название игры"
+          />
+          <button class="site-header__search-button">Поиск</button>
+        </form>
+      </div>
 
-<body>
+      <div class="site-header__right-side">
+        <!-- favorite -->
+        <a
+          href="#"
+          class="site-header__wrapper site-header__favorite-wrapper"
+          aria-label="Избранные игры"
+        >
+          <svg class="site-header__favorite-icon" width="16" height="16">
+            <use xlink:href="./img/sprite.svg#icon-favorite"></use>
+          </svg>
+          <span class="site-header__text">Избранное</span>
+        </a>
 
-  <!-- BEGIN header -->
-  <header class="site-header">
-    <a href="#" class="site-header__logo-wrapper" aria-label="Логотип gameCRUD">
-      <svg class="site-header__logo-icon" width="32" height="32">
-        <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
-      </svg>
-      <span class="site-header__logo-text">GAME-CRUD</span>
-    </a>
-    <form class="site-header__search-wrapper" action="/search">
-      <input class="site-header__search-input" type="text" placeholder="Введите название игры">
-      <button class="site-header__search-button">Поиск</button>
-    </form>
-  </header>
-  <!-- END header -->
+        <div class="site-header__wrapper site-header__add-game-wrapper">
+          <button
+            class="site-header__add-game-button"
+            aria-label="Добавить новую игру"
+          >
+            <svg class="site-header__add-game-icon" width="30" height="30">
+              <use xlink:href="./img/sprite.svg#icon-add-game"></use>
+            </svg>
+            <span class="site-header__text"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- END header -->
 
-  <div class="site-wrapper">
-    <!-- BEGIN main content -->
-    <main></main>
-    <!-- END main content -->
+    <div class="site-wrapper">
+      <!-- BEGIN main content -->
+      <main></main>
+      <!-- END main content -->
 
-    <!-- BEGIN footer -->
-    <footer></footer>
-    <!-- END footer -->
-  </div>
+      <!-- BEGIN footer -->
+      <footer></footer>
+      <!-- END footer -->
+    </div>
 
-  <!-- BEGIN scripts -->
-  <script type="text/javascript" src="js/app.js"></script>
-  <!-- END scripts -->
-
-</body>
-
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 </html>
