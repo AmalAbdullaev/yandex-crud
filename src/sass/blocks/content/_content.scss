@@ -1,0 +1,39 @@
+.content {
+  
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__game-list {
+    display: flex;
+
+    margin-top: 5px;
+    padding: 10px;
+
+    border-radius: 3px;
+    background-color: #fff;
+  }
+
+  // popular
+  &__popular-games {
+    margin-top: 20px;
+    font-size: 14px;
+
+    &-item {
+      
+    }
+  }
+
+  // new games
+  &__new-games {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  // all games
+  &__games {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
