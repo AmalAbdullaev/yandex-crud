@@ -1,167 +1,179 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Template</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fff" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="stylesheet" media="all" href="css/app.css" />
-  </head>
 
-  <body>
-    <!-- BEGIN header -->
-    <header class="site-header">
-      <div class="site-header__left-side">
-        <!-- logo -->
-        <a
-          href="#"
-          class="site-header__wrapper site-header__logo-wrapper"
-          aria-label="Логотип gameCRUD"
-        >
-          <svg class="site-header__logo-icon" width="32" height="32">
-            <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
-          </svg>
-          <span class="site-header__text">
-            <strong>GAME-CRUD</strong>
-          </span>
-        </a>
-        <!-- search -->
-        <form class="site-header__search-wrapper" action="/search">
-          <input
-            class="site-header__search-input"
-            type="text"
-            placeholder="Введите название игры"
-          />
-          <button class="site-header__search-button">Поиск</button>
-        </form>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Template</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" media="all" href="css/app.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-      <div class="site-header__right-side">
-        <!-- favorite -->
-        <a
-          href="#"
-          class="site-header__wrapper site-header__favorite-wrapper"
-          aria-label="Избранные игры"
-        >
-          <svg class="site-header__favorite-icon" width="16" height="16">
-            <use xlink:href="./img/sprite.svg#icon-favorite"></use>
-          </svg>
-          <span class="site-header__text">Избранные</span>
-        </a>
-
-        <div class="site-header__wrapper site-header__add-game-wrapper">
-          <button
-            class="site-header__add-game-button"
-            aria-label="Добавить новую игру"
-          >
-            <svg class="site-header__add-game-icon" width="30" height="30">
-              <use xlink:href="./img/sprite.svg#icon-add-game"></use>
-            </svg>
-            <span class="site-header__text"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <!-- END header -->
-
-    <div class="site-wrapper">
-      <!-- BEGIN main content -->
-      <main class="content">
-        <h1 class="visually-hidden">Витрина с играми</h1>
-        <!-- popular games -->
-        <section class="content__games content__games-popular">
-          <h2 class="content__title">Популярные</h2>
-
-          <ul class="content__games-list">
-            <li class="content__popular-games-item">1</li>
-            <li class="content__popular-games-item">1</li>
-            <li class="content__popular-games-item">1</li>
-          </ul>
-        </section>
-        <!-- new games -->
-        <section class="content__games content__games-new">
-          <h2 class="content__title">Новые игры</h2>
-
-          <ul class="content__games-list">
-            <li class="content__new-games-item">1</li>
-            <li class="content__new-games-item">1</li>
-            <li class="content__new-games-item">1</li>
-          </ul>
-        </section>
-        <!-- all games -->
-        <section class="content__games content__games-all">
-          <h2 class="content__title">Все игры</h2>
-
-          <ul class="content__games-list">
-            <!-- item -->
-            <li class="content__games-all-item">
-              <!-- cover -->
-              <div class="content__games-all-item-cover-wrapper">
-                <img
-                  class="content__games-all-item-cover"
-                  src="./img/covers/cover.jpg"
-                  alt="Обложка игры"
-                />
-              </div>
-              <div class="content__games-all-item-info-wrapper">
-                <!-- new / rating -->
-                <div class="content__games-all-item-header"></div>
-                <!-- description -->
-
-                <div class="content__games-all-item-content">
-                  <div class="content__games-all-item-description">
-                    <h3 class="content__games-all-item-title">
-                      Mortal Kombat 11
-                    </h3>
-                    <p class="content__games-all-item-text">
-                      Так же, как и предшественник, представляет собой файтинг,
-                      выполненный в стиле 2.5D. Наряду с вернувшимися
-                      добиваниями
-                    </p>
-                  </div>
-                </div>
-                <!-- console / price -->
-                <div class="content__games-all-item-footer">
-                  <div class="content__console">
-                    <svg class="content__console-icon" width="15" height="15">
-                      <use xlink:href="./img/sprite.svg#icon-pc"></use>
-                    </svg>
-                    <svg class="content__console-icon" width="18" height="18">
-                      <use xlink:href="./img/sprite.svg#icon-ps4"></use>
-                    </svg>
-                    <svg class="content__console-icon" width="15" height="15">
-                      <use xlink:href="./img/sprite.svg#icon-xbox"></use>
-                    </svg>
-                    <svg class="content__console-icon" width="15" height="15">
-                      <use xlink:href="./img/sprite.svg#icon-nintendo"></use>
-                    </svg>
-                  </div>
-
-                  <button
-                    class="content__buy-game-button"
-                    aria-label="Кнопка, купить игру"
-                  >
-                    <span class="content__game-price">5 799</span>
-                  </button>
-                </div>
-              </div>
-            </li>
-            <!-- <li class="content__games-all-item">1</li> -->
-            <!-- <li class="content__games-all-item">1</li> -->
-          </ul>
-        </section>
-      </main>
-      <!-- END main content -->
-
-      <!-- BEGIN footer -->
-      <footer></footer>
-      <!-- END footer -->
+<body>
+  <!-- BEGIN header -->
+  <header class="site-header">
+    <div class="site-header__left-side">
+      <!-- logo -->
+      <a href="#" class="site-header__wrapper site-header__logo-wrapper" aria-label="Логотип gameCRUD">
+        <svg class="site-header__logo-icon" width="32" height="32">
+          <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
+        </svg>
+        <span class="site-header__text">
+          <strong>GAME-CRUD</strong>
+        </span>
+      </a>
+      <!-- search -->
+      <form class="site-header__search-wrapper" action="/search">
+        <input class="site-header__search-input" type="text" placeholder="Введите название игры" />
+        <button class="site-header__search-button">Поиск</button>
+      </form>
     </div>
 
-    <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/app.js"></script>
-    <!-- END scripts -->
-  </body>
+    <div class="site-header__right-side">
+      <!-- favorite -->
+      <a href="#" class="site-header__wrapper site-header__favorite-wrapper" aria-label="Избранные игры">
+        <svg class="site-header__favorite-icon" width="16" height="16">
+          <use xlink:href="./img/sprite.svg#icon-favorite"></use>
+        </svg>
+        <span class="site-header__text">Избранные</span>
+      </a>
+
+      <div class="site-header__wrapper site-header__add-game-wrapper">
+        <button class="site-header__add-game-button" aria-label="Добавить новую игру">
+          <svg class="site-header__add-game-icon" width="30" height="30">
+            <use xlink:href="./img/sprite.svg#icon-add-game"></use>
+          </svg>
+          <span class="site-header__text"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- END header -->
+
+  <div class="site-wrapper">
+    <!-- BEGIN main content -->
+    <main class="content">
+      <h1 class="visually-hidden">Витрина с играми</h1>
+      <!-- popular games -->
+      <section class="content__games content__games-popular">
+        <h2 class="content__title">Популярные</h2>
+
+        <ul class="content__games-list">
+          <li class="content__popular-games-item">1</li>
+          <li class="content__popular-games-item">1</li>
+          <li class="content__popular-games-item">1</li>
+        </ul>
+      </section>
+      <!-- new games -->
+      <section class="content__games content__games-new">
+        <h2 class="content__title">Новые игры</h2>
+
+        <ul class="content__games-list">
+          <li class="content__new-games-item">1</li>
+          <li class="content__new-games-item">1</li>
+          <li class="content__new-games-item">1</li>
+        </ul>
+      </section>
+      <!-- all games -->
+      <section class="content__games content__games-all">
+        <h2 class="content__title">Все игры</h2>
+
+        <ul class="content__games-list">
+          <!-- item -->
+          <li class="content__games-all-item">
+            <!-- cover -->
+            <div class="content__games-all-item-cover-wrapper">
+              <img class="content__games-all-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
+            </div>
+            <div class="content__games-all-item-info-wrapper">
+              <!-- new / rating -->
+              <div class="content__games-all-item-header">
+                <span class="content__game-new">Новинка</span>
+
+                <div class="content__game-rating">
+                  
+                  <div id="full-stars-example-two">
+                    <div class="rating-group">
+                      <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none"
+                        value="0" type="radio" />
+                      <label aria-label="1 star" class="rating__label" for="rating3-1"><i
+                          class="rating__icon rating__icon--star fa fa-star"></i></label>
+                      <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio" />
+                      <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
+                          class="rating__icon rating__icon--star fa fa-star"></i></label>
+                      <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio" />
+                      <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
+                          class="rating__icon rating__icon--star fa fa-star"></i></label>
+                      <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio" />
+                      <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
+                          class="rating__icon rating__icon--star fa fa-star"></i></label>
+                      <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio" />
+                      <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
+                          class="rating__icon rating__icon--star fa fa-star"></i></label>
+                      <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
+                    </div>
+                  </div>
+
+                  <!-- <svg class="content__game-rating-star" width="15" height="15">
+                    <use xlink:href="./img/sprite.svg#icon-star"></use>
+                  </svg> -->
+                </div>
+              </div>
+              <!-- description -->
+
+              <div class="content__games-all-item-content">
+                <div class="content__games-all-item-description">
+                  <h3 class="content__games-all-item-title">
+                    Mortal Kombat 11
+                  </h3>
+                  <p class="content__games-all-item-text">
+                    Так же, как и предшественник, представляет собой файтинг,
+                    выполненный в стиле 2.5D. Наряду с вернувшимися
+                    добиваниями
+                  </p>
+                </div>
+              </div>
+              <!-- console / price -->
+              <div class="content__games-all-item-footer">
+                <div class="content__console">
+                  <svg class="content__console-icon" width="15" height="15">
+                    <use xlink:href="./img/sprite.svg#icon-pc"></use>
+                  </svg>
+                  <svg class="content__console-icon" width="18" height="18">
+                    <use xlink:href="./img/sprite.svg#icon-ps4"></use>
+                  </svg>
+                  <svg class="content__console-icon" width="15" height="15">
+                    <use xlink:href="./img/sprite.svg#icon-xbox"></use>
+                  </svg>
+                  <svg class="content__console-icon" width="15" height="15">
+                    <use xlink:href="./img/sprite.svg#icon-nintendo"></use>
+                  </svg>
+                </div>
+
+                <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
+                  <span class="content__game-price">5 799</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <!-- <li class="content__games-all-item">1</li> -->
+          <!-- <li class="content__games-all-item">1</li> -->
+        </ul>
+      </section>
+    </main>
+    <!-- END main content -->
+
+    <!-- BEGIN footer -->
+    <footer></footer>
+    <!-- END footer -->
+  </div>
+
+  <!-- BEGIN scripts -->
+  <script type="text/javascript" src="js/app.js"></script>
+  <!-- END scripts -->
+</body>
+
 </html>

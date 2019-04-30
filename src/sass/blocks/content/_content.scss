@@ -1,8 +1,7 @@
 .content {
-  
   &__games {
     margin-top: 20px;
-    
+
     padding: 15px 7px;
     border-radius: 3px;
     background-color: #fff;
@@ -22,14 +21,35 @@
     margin-top: 5px;
   }
 
+  // new game label
+  &__game-new {
+    padding: 3px 7px 0 7px;
+
+    color: #fff;
+    font-size: 8px;
+
+    background-color: $orange;
+    border-radius: 3px;
+  }
+
+  // rating
+  &__game-rating {
+    display: flex;
+
+    &-star {
+      margin-right: 3px;
+      fill: #c9c9c9;
+    }
+  }
+
   // console
   &__console {
     display: flex;
     align-items: center;
-    
+
     &-icon {
       margin-right: 3px;
-      fill: #C9C9C9;
+      fill: #c9c9c9;
     }
   }
 
@@ -38,7 +58,7 @@
     display: flex;
     align-items: center;
     padding: 0 6px;
-    
+
     background-color: transparent;
     border: 2px solid $orange;
     border-radius: 3px;
@@ -58,9 +78,9 @@
 
   &__game-price {
     display: flex;
-    
+
     &::after {
-      content:"\20BD"; 
+      content: "\20BD";
     }
   }
 
@@ -70,7 +90,6 @@
     font-size: 14px;
 
     &-item {
-      
     }
   }
 
@@ -82,16 +101,19 @@
 
   // all games
   &__games-all {
-    
     font-size: 14px;
-    
+
     &-item {
       width: 175px;
       height: 330px;
 
       margin: 0 7px 15px 7px;
       border-radius: 3px;
-      box-shadow: 0 0 3px rgba(0,0,0,0.10);
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+
+      &:hover {
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+      }
 
       &-cover {
         &-wrapper {
@@ -100,7 +122,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        
+
         border-radius: 3px 3px 0 0;
       }
 
@@ -110,8 +132,10 @@
 
       // game header
       &-header {
+        display: flex;
+        justify-content: space-between;
+
         height: 15px;
-        background-color: red;
       }
 
       // game content
@@ -134,14 +158,12 @@
       }
 
       &-text {
-        margin-top: 2px;
-
         height: 45px;
-        font-size: 10px;
+        font-size: 9.5px;
 
         overflow: hidden;
       }
-      
+
       // game footer
       &-footer {
         display: flex;
@@ -151,5 +173,63 @@
         height: 25px;
       }
     }
+  }
+}
+
+
+
+
+
+
+// rating copy
+
+#full-stars-example-two {
+
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  .rating-group {
+    display: inline-flex;
+  }
+  
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+  
+  /* hide radio inputs */
+  .rating__input {
+   position: absolute !important;
+   left: -9999px !important;
+  }
+  
+  /* hide 'none' input from screenreaders */
+  .rating__input--none {
+    display: none
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+      font-size: 15px;
+      margin-left: 3px;
+  }
+  
+  /* set default star color */
+  .rating__icon--star {
+    color: $orange;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+  
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star {
+    color: $orange;
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
   }
 }
