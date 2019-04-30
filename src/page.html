@@ -71,33 +71,85 @@
       <main class="content">
         <h1 class="visually-hidden">Витрина с играми</h1>
         <!-- popular games -->
-        <section class="content__popular-games">
+        <section class="content__games content__games-popular">
           <h2 class="content__title">Популярные</h2>
 
-          <ul class="content__game-list">
+          <ul class="content__games-list">
             <li class="content__popular-games-item">1</li>
             <li class="content__popular-games-item">1</li>
             <li class="content__popular-games-item">1</li>
           </ul>
         </section>
         <!-- new games -->
-        <section class="content__new-games">
+        <section class="content__games content__games-new">
           <h2 class="content__title">Новые игры</h2>
 
-          <ul class="content__game-list">
+          <ul class="content__games-list">
             <li class="content__new-games-item">1</li>
             <li class="content__new-games-item">1</li>
             <li class="content__new-games-item">1</li>
           </ul>
         </section>
         <!-- all games -->
-        <section class="content__games">
+        <section class="content__games content__games-all">
           <h2 class="content__title">Все игры</h2>
 
-          <ul class="content__game-list">
-            <li class="content__games-item">1</li>
-            <li class="content__games-item">1</li>
-            <li class="content__games-item">1</li>
+          <ul class="content__games-list">
+            <!-- item -->
+            <li class="content__games-all-item">
+              <!-- cover -->
+              <div class="content__games-all-item-cover-wrapper">
+                <img
+                  class="content__games-all-item-cover"
+                  src="./img/covers/cover.jpg"
+                  alt="Обложка игры"
+                />
+              </div>
+              <div class="content__games-all-item-info-wrapper">
+                <!-- new / rating -->
+                <div class="content__games-all-item-header"></div>
+                <!-- description -->
+
+                <div class="content__games-all-item-content">
+                  <div class="content__games-all-item-description">
+                    <h3 class="content__games-all-item-title">
+                      Mortal Kombat 11
+                    </h3>
+                    <p class="content__games-all-item-text">
+                      Так же, как и предшественник, представляет собой файтинг,
+                      выполненный в стиле 2.5D. Наряду с вернувшимися
+                      добиваниями
+                    </p>
+                  </div>
+                </div>
+                <!-- console / price -->
+                <div class="content__games-all-item-footer">
+                  <div class="content__console">
+                    <svg class="content__console-icon" width="15" height="15">
+                      <use xlink:href="./img/sprite.svg#icon-pc"></use>
+                    </svg>
+                    <svg class="content__console-icon" width="18" height="18">
+                      <use xlink:href="./img/sprite.svg#icon-ps4"></use>
+                    </svg>
+                    <svg class="content__console-icon" width="15" height="15">
+                      <use xlink:href="./img/sprite.svg#icon-xbox"></use>
+                    </svg>
+                    <svg class="content__console-icon" width="15" height="15">
+                      <use xlink:href="./img/sprite.svg#icon-nintendo"></use>
+                    </svg>
+                  </div>
+
+                  <button
+                    class="content__buy-game-button"
+                    aria-label="Кнопка, купить игру"
+                  >
+                    <span class="content__game-price">5 799</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <!-- <li class="content__games-all-item">1</li> -->
+            <!-- <li class="content__games-all-item">1</li> -->
           </ul>
         </section>
       </main>

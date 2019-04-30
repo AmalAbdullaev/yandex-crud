@@ -1,22 +1,71 @@
 .content {
   
-  &__title {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  &__game-list {
-    display: flex;
-
-    margin-top: 5px;
-    padding: 10px;
-
+  &__games {
+    margin-top: 20px;
+    
+    padding: 15px 7px;
     border-radius: 3px;
     background-color: #fff;
   }
 
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+
+    padding: 0 7px;
+  }
+
+  &__games-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 5px;
+  }
+
+  // console
+  &__console {
+    display: flex;
+    align-items: center;
+    
+    &-icon {
+      margin-right: 3px;
+      fill: #C9C9C9;
+    }
+  }
+
+  // buy game
+  &__buy-game-button {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    
+    background-color: transparent;
+    border: 2px solid $orange;
+    border-radius: 3px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: $orange;
+
+    &:hover {
+      color: #fff;
+      background-color: $orange;
+
+      transition: 0.3s;
+    }
+  }
+
+  &__game-price {
+    display: flex;
+    
+    &::after {
+      content:"\20BD"; 
+    }
+  }
+
   // popular
-  &__popular-games {
+  &__games-popular {
     margin-top: 20px;
     font-size: 14px;
 
@@ -26,14 +75,81 @@
   }
 
   // new games
-  &__new-games {
+  &__games-new {
     margin-top: 20px;
     font-size: 14px;
   }
 
   // all games
-  &__games {
-    margin-top: 20px;
+  &__games-all {
+    
     font-size: 14px;
+    
+    &-item {
+      width: 175px;
+      height: 330px;
+
+      margin: 0 7px 15px 7px;
+      border-radius: 3px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.10);
+
+      &-cover {
+        &-wrapper {
+          height: 190px;
+        }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+        border-radius: 3px 3px 0 0;
+      }
+
+      &-info-wrapper {
+        padding: 10px;
+      }
+
+      // game header
+      &-header {
+        height: 15px;
+        background-color: red;
+      }
+
+      // game content
+      &-content {
+        display: flex;
+        height: 80px;
+      }
+
+      &-description {
+        margin: auto 0;
+      }
+
+      &-title {
+        font-size: 16px;
+        font-weight: 700;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &-text {
+        margin-top: 2px;
+
+        height: 45px;
+        font-size: 10px;
+
+        overflow: hidden;
+      }
+      
+      // game footer
+      &-footer {
+        display: flex;
+
+        justify-content: space-between;
+
+        height: 25px;
+      }
+    }
   }
 }
