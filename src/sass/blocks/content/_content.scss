@@ -11,7 +11,7 @@
     font-size: 16px;
     font-weight: 400;
 
-    padding: 0 7px;
+    padding: 0 7px 7px 7px;
   }
 
   &__games-list {
@@ -46,14 +46,11 @@
     }
 
     &:checked:before {
-      font-family: "Font Awesome 5 Free"; 
-      font-weight: 700;
-      content: "\f02e";
-      
       color: #FF3333;
-  
-      width: 20px;
-      height: 20px;
+    }
+
+    &:hover:before {
+      color: #FF3333;
     }
   }
 
@@ -81,6 +78,16 @@
         content: '-';
         margin: 0 3px;
       }
+
+      &-count {
+        &::before {
+          content: '(';
+        }
+        &::after {
+          content: ')';
+
+        }
+      }
     }
 
   }
@@ -92,7 +99,8 @@
 
     &-icon {
       margin-right: 3px;
-      fill: #c9c9c9;
+      font-size: 18px;
+      color: #c9c9c9;
     }
   }
 
@@ -102,7 +110,7 @@
     align-items: center;
     padding: 4px 12px;
 
-    min-width: 77px;
+    min-width: 80px;
 
     background-color: transparent;
     border: 2px solid $orange;
