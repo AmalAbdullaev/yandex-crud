@@ -3,8 +3,16 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-.site-wrapper {
-	width: 960px;
+.site-header-wrapper {
+	display: flex;
+	justify-content: space-between;
+	
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.site-content-wrapper {
+	width: 1200px;
 	margin: 0 auto;
 }
 

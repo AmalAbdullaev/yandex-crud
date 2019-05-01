@@ -9,75 +9,76 @@
   <meta name="theme-color" content="#fff" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="stylesheet" media="all" href="css/app.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
   <!-- BEGIN header -->
   <header class="site-header">
-    <div class="site-header__left-side">
-      <!-- logo -->
-      <a href="#" class="site-header__wrapper site-header__logo-wrapper" aria-label="Логотип gameCRUD">
-        <svg class="site-header__logo-icon" width="32" height="32">
-          <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
-        </svg>
-        <span class="site-header__text">
-          <strong>GAME-CRUD</strong>
-        </span>
-      </a>
-      <!-- search -->
-      <form class="site-header__search-wrapper" action="/search">
-        <input class="site-header__search-input" type="text" placeholder="Введите название игры" />
-        <button class="site-header__search-button">Поиск</button>
-      </form>
-    </div>
-
-    <div class="site-header__right-side">
-      <!-- favorite -->
-      <a href="#" class="site-header__wrapper site-header__favorite-wrapper" aria-label="Избранные игры">
-        <svg class="site-header__favorite-icon" width="16" height="16">
-          <use xlink:href="./img/sprite.svg#icon-favorite"></use>
-        </svg>
-        <span class="site-header__text">Избранные</span>
-      </a>
-
-      <div class="site-header__wrapper site-header__add-game-wrapper">
-        <button class="site-header__add-game-button" aria-label="Добавить новую игру">
-          <svg class="site-header__add-game-icon" width="30" height="30">
-            <use xlink:href="./img/sprite.svg#icon-add-game"></use>
+    <div class="site-header-wrapper">
+      <div class="site-header__left-side">
+        <!-- logo -->
+        <a href="#" class="site-header__wrapper site-header__logo-wrapper" aria-label="Логотип gameCRUD">
+          <svg class="site-header__logo-icon" width="32" height="32">
+            <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
           </svg>
-          <span class="site-header__text"></span>
-        </button>
+          <span class="site-header__text">
+            <strong>GAME-CRUD</strong>
+          </span>
+        </a>
+        <!-- search -->
+        <form class="site-header__search-wrapper" action="/search">
+          <input class="site-header__search-input" type="text" placeholder="Введите название игры" />
+          <button class="site-header__search-button">Поиск</button>
+        </form>
+      </div>
+
+      <div class="site-header__right-side">
+        <!-- favorite -->
+        <a href="#" class="site-header__wrapper site-header__favorite-wrapper" aria-label="Избранные игры">
+          <svg class="site-header__favorite-icon" width="16" height="16">
+            <use xlink:href="./img/sprite.svg#icon-favorite"></use>
+          </svg>
+          <span class="site-header__text">Избранные</span>
+        </a>
+
+        <div class="site-header__wrapper site-header__add-game-wrapper">
+          <button class="site-header__add-game-button" aria-label="Добавить новую игру">
+            <svg class="site-header__add-game-icon" width="30" height="30">
+              <use xlink:href="./img/sprite.svg#icon-add-game"></use>
+            </svg>
+            <span class="site-header__text"></span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
   <!-- END header -->
 
-  <div class="site-wrapper">
+  <div class="site-content-wrapper">
     <!-- BEGIN main content -->
     <main class="content">
       <h1 class="visually-hidden">Витрина с играми</h1>
-      <!-- popular games -->
+
+      <!-- SECTION popular games -->
       <section class="content__games content__games-popular">
         <h2 class="content__title">Популярные</h2>
 
         <ul class="content__games-list">
-          <li class="content__popular-games-item">1</li>
-          <li class="content__popular-games-item">1</li>
-          <li class="content__popular-games-item">1</li>
+          <li class="content__games-popular-item"></li>
         </ul>
       </section>
-      <!-- new games -->
+
+      <!-- SECTION new games -->
       <section class="content__games content__games-new">
         <h2 class="content__title">Новые игры</h2>
 
         <ul class="content__games-list">
-          <li class="content__new-games-item">1</li>
-          <li class="content__new-games-item">1</li>
-          <li class="content__new-games-item">1</li>
+          <li class="content__games-new-item"></li>
         </ul>
       </section>
-      <!-- all games -->
+
+      <!-- SECTION all games -->
       <section class="content__games content__games-all">
         <h2 class="content__title">Все игры</h2>
 
@@ -86,15 +87,18 @@
           <li class="content__games-all-item">
             <!-- cover -->
             <div class="content__games-all-item-cover-wrapper">
+              <!-- bookmark -->
+              <div class="content__bookmark-wrapper">
+                <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
+              </div>
+              <!-- img -->
               <img class="content__games-all-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
             </div>
+
             <div class="content__games-all-item-info-wrapper">
               <!-- new / rating -->
               <div class="content__games-all-item-header">
-                <span class="content__game-new">Новинка</span>
-
-                <div class="content__game-rating">
-                  
+                <div class="content__game-rating-stars">
                   <div id="full-stars-example-two">
                     <div class="rating-group">
                       <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none"
@@ -116,14 +120,15 @@
                       <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
                     </div>
                   </div>
+                </div>
 
-                  <!-- <svg class="content__game-rating-star" width="15" height="15">
-                    <use xlink:href="./img/sprite.svg#icon-star"></use>
-                  </svg> -->
+                <div class="content__game-rating">
+                  <span class="content__game-rating-votes">(245)</span>
+                  <span class="content__game-rating-avg">8,9</span>
                 </div>
               </div>
-              <!-- description -->
 
+              <!-- description -->
               <div class="content__games-all-item-content">
                 <div class="content__games-all-item-description">
                   <h3 class="content__games-all-item-title">
@@ -136,19 +141,20 @@
                   </p>
                 </div>
               </div>
+
               <!-- console / price -->
               <div class="content__games-all-item-footer">
                 <div class="content__console">
-                  <svg class="content__console-icon" width="15" height="15">
+                  <svg class="content__console-icon" width="17" height="17">
                     <use xlink:href="./img/sprite.svg#icon-pc"></use>
                   </svg>
-                  <svg class="content__console-icon" width="18" height="18">
+                  <svg class="content__console-icon" width="20" height="20">
                     <use xlink:href="./img/sprite.svg#icon-ps4"></use>
                   </svg>
-                  <svg class="content__console-icon" width="15" height="15">
+                  <svg class="content__console-icon" width="17" height="17">
                     <use xlink:href="./img/sprite.svg#icon-xbox"></use>
                   </svg>
-                  <svg class="content__console-icon" width="15" height="15">
+                  <svg class="content__console-icon" width="17" height="17">
                     <use xlink:href="./img/sprite.svg#icon-nintendo"></use>
                   </svg>
                 </div>
@@ -159,8 +165,13 @@
               </div>
             </div>
           </li>
-          <!-- <li class="content__games-all-item">1</li> -->
-          <!-- <li class="content__games-all-item">1</li> -->
+          
+          <li class="content__games-all-item">1</li>
+          <li class="content__games-all-item">2</li>
+          <li class="content__games-all-item">2</li>
+          <li class="content__games-all-item">2</li>
+          <li class="content__games-all-item">2</li>
+          <li class="content__games-all-item">2</li>
         </ul>
       </section>
     </main>

@@ -1,19 +1,19 @@
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   background-color: #fff;
+
   height: 65px;
 
   &__left-side {
     display: flex;
-    margin-left: 20px;
+    align-items: center;
   }
-
+  
   &__right-side {
     display: flex;
-    margin-right: 20px;
+    align-items: center;
   }
 
   &__wrapper {

@@ -2,7 +2,7 @@
   &__games {
     margin-top: 20px;
 
-    padding: 15px 7px;
+    padding: 15px 7px 0 7px;
     border-radius: 3px;
     background-color: #fff;
   }
@@ -21,25 +21,68 @@
     margin-top: 5px;
   }
 
-  // new game label
-  &__game-new {
-    padding: 3px 7px 0 7px;
+  // bookmark 
+  &__bookmark-wrapper {
+    display: flex;
+    position: relative;
+  }
 
-    color: #fff;
-    font-size: 8px;
+  &__bookmark {
+    position: absolute;
+    top: -5px;
+    right: 13px;
 
-    background-color: $orange;
-    border-radius: 3px;
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+
+    &:before {
+      font-family: "Font Awesome 5 Free"; 
+      font-weight: 700;
+      content: "\f02e";
+      
+      color: #c9c9c9;
+      visibility:visible;
+    }
+
+    &:checked:before {
+      font-family: "Font Awesome 5 Free"; 
+      font-weight: 700;
+      content: "\f02e";
+      
+      color: #FF3333;
+  
+      width: 20px;
+      height: 20px;
+    }
   }
 
   // rating
   &__game-rating {
     display: flex;
 
-    &-star {
-      margin-right: 3px;
-      fill: #c9c9c9;
+    font-size: 13px;
+    font-weight: 700;
+    color: #c9c9c9;
+
+    &-stars {
+      display: flex;
+      align-items: center;
     }
+
+    &-avg {
+     display: flex; 
+    }
+
+    &-votes {
+      display: flex;
+
+      &::after {
+        content: '-';
+        margin: 0 3px;
+      }
+    }
+
   }
 
   // console
@@ -57,13 +100,15 @@
   &__buy-game-button {
     display: flex;
     align-items: center;
-    padding: 0 6px;
+    padding: 4px 12px;
+
+    min-width: 77px;
 
     background-color: transparent;
     border: 2px solid $orange;
     border-radius: 3px;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
 
     color: $orange;
@@ -78,6 +123,7 @@
 
   &__game-price {
     display: flex;
+    margin: 0 auto;
 
     &::after {
       content: "\20BD";
@@ -86,17 +132,38 @@
 
   // popular
   &__games-popular {
-    margin-top: 20px;
     font-size: 14px;
 
     &-item {
+      width: 175px;
+      height: 100px;
+
+      margin: 0 7px 15px 7px;
+      border-radius: 3px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+
+      &:hover {
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+      }
     }
   }
 
   // new games
   &__games-new {
-    margin-top: 20px;
     font-size: 14px;
+
+    &-item {
+      width: 175px;
+      height: 100px;
+
+      margin: 0 7px 15px 7px;
+      border-radius: 3px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+
+      &:hover {
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+      }
+    }
   }
 
   // all games
@@ -104,8 +171,8 @@
     font-size: 14px;
 
     &-item {
-      width: 175px;
-      height: 330px;
+      // width: 200px;
+      width: 223px;
 
       margin: 0 7px 15px 7px;
       border-radius: 3px;
@@ -117,7 +184,7 @@
 
       &-cover {
         &-wrapper {
-          height: 190px;
+          height: 240px;
         }
         width: 100%;
         height: 100%;
@@ -127,13 +194,12 @@
       }
 
       &-info-wrapper {
-        padding: 10px;
+        padding: 15px;
       }
 
       // game header
       &-header {
         display: flex;
-        justify-content: space-between;
 
         height: 15px;
       }
@@ -141,7 +207,7 @@
       // game content
       &-content {
         display: flex;
-        height: 80px;
+        margin: 10px 0;
       }
 
       &-description {
@@ -158,8 +224,11 @@
       }
 
       &-text {
-        height: 45px;
-        font-size: 9.5px;
+        margin-top: 5px;
+
+        height: 49px;
+        font-size: 12px;
+        line-height: 12px;
 
         overflow: hidden;
       }
@@ -169,8 +238,6 @@
         display: flex;
 
         justify-content: space-between;
-
-        height: 25px;
       }
     }
   }
@@ -181,7 +248,8 @@
 
 
 
-// rating copy
+
+// rating copy, потом тут разберусь
 
 #full-stars-example-two {
 
@@ -209,8 +277,8 @@
   /* set icon padding and size */
   .rating__label {
     cursor: pointer;
-      font-size: 15px;
-      margin-left: 3px;
+      font-size: 16px;
+      margin-right: 3px;
   }
   
   /* set default star color */
