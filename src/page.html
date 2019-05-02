@@ -60,28 +60,23 @@
     <main class="content">
       <h1 class="visually-hidden">Витрина с играми</h1>
 
-      <!-- SECTION popular games -->
-      <section class="content__games content__games-popular">
-        <h2 class="content__title">Популярные</h2>
+      <!-- SECTION popular game -->
+      <section class="content__game">
+        <h2 class="content__section-title">Популярные</h2>
 
-        <ul class="content__games-list">
-          <!-- <li class="content__games-popular-item"></li> -->
-
+        <ul class="content__game-list">
           <!-- item -->
-          <li class="content__games-popular-item">
+          <!-- <li class="content__game-popular-item"> -->
+          <li class="content__game-item content__game-popular-item">
             <!-- cover -->
-            <div class="content__games-popular-item-cover-wrapper">
-              <!-- bookmark -->
-              <div class="content__bookmark-wrapper">
-                <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
-              </div>
+            <div class="content__game-popular-item-cover-wrapper">
               <!-- img -->
-              <img class="content__games-all-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
+              <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
             </div>
 
-            <div class="content__games-all-item-info-wrapper">
+            <div class="content__game-item-info-wrapper">
               <!-- new / rating -->
-              <div class="content__games-all-item-header">
+              <div class="content__game-item-header">
                 <div class="content__game-rating-stars">
                   <div id="full-stars-example-two">
                     <div class="rating-group">
@@ -105,22 +100,18 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="content__game-rating">
-                  <span class="content__game-rating-votes">
-                    <span class="content__game-rating-votes-count">245</span>
-                  </span>
-                  <span class="content__game-rating-avg">8,9</span>
-                </div>
               </div>
 
+              <!-- bookmark -->
+              <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
+
               <!-- description -->
-              <div class="content__games-all-item-content">
-                <div class="content__games-all-item-description">
-                  <h3 class="content__games-all-item-title">
+              <div class="content__game-item-content">
+                <div class="content__game-item-description">
+                  <h3 class="content__game-item-title">
                     Mortal Kombat 11
                   </h3>
-                  <p class="content__games-all-item-text">
+                  <p class="content__game-item-text content__game-popular-item-text">
                     Так же, как и предшественник, представляет собой файтинг,
                     выполненный в стиле 2.5D. Наряду с вернувшимися
                     добиваниями
@@ -129,7 +120,7 @@
               </div>
 
               <!-- console / price -->
-              <div class="content__games-all-item-footer">
+              <div class="content__game-item-footer">
                 <div class="content__console">
                   <!-- <svg class="content__console-icon" width="17" height="17">
                     <use xlink:href="./img/sprite.svg#icon-pc"></use>
@@ -149,35 +140,35 @@
         </ul>
       </section>
 
-      <!-- SECTION new games -->
-      <section class="content__games content__games-new">
-        <h2 class="content__title">Новые игры</h2>
+      <!-- SECTION new game -->
+      <section class="content__game content__game-new">
+        <h2 class="content__section-title">Новые игры</h2>
 
-        <ul class="content__games-list">
-          <li class="content__games-new-item"></li>
+        <ul class="content__game-list">
+          <li class="content__game-new-item"></li>
         </ul>
       </section>
 
-      <!-- SECTION all games -->
-      <section class="content__games content__games-all">
-        <h2 class="content__title">Все игры</h2>
+      <!-- SECTION all game -->
+      <section class="content__game">
+        <h2 class="content__section-title">Все игры</h2>
 
-        <ul class="content__games-list">
+        <ul class="content__game-list">
           <!-- item -->
-          <li class="content__games-all-item">
+          <li class="content__game-item content__game-all-item">
             <!-- cover -->
-            <div class="content__games-all-item-cover-wrapper">
+            <div class="content__game-item-cover-wrapper">
               <!-- bookmark -->
               <div class="content__bookmark-wrapper">
                 <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
               </div>
               <!-- img -->
-              <img class="content__games-all-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
+              <img class="content__game-item-cover content__game-all-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
             </div>
 
-            <div class="content__games-all-item-info-wrapper">
+            <div class="content__game-item-info-wrapper">
               <!-- new / rating -->
-              <div class="content__games-all-item-header">
+              <div class="content__game-item-header">
                 <div class="content__game-rating-stars">
                   <div id="full-stars-example-two">
                     <div class="rating-group">
@@ -211,12 +202,12 @@
               </div>
 
               <!-- description -->
-              <div class="content__games-all-item-content">
-                <div class="content__games-all-item-description">
-                  <h3 class="content__games-all-item-title">
+              <div class="content__game-item-content">
+                <div class="content__game-item-description">
+                  <h3 class="content__game-item-title">
                     Mortal Kombat 11
                   </h3>
-                  <p class="content__games-all-item-text">
+                  <p class="content__game-item-text content__game-all-item-text">
                     Так же, как и предшественник, представляет собой файтинг,
                     выполненный в стиле 2.5D. Наряду с вернувшимися
                     добиваниями
@@ -225,7 +216,7 @@
               </div>
 
               <!-- console / price -->
-              <div class="content__games-all-item-footer">
+              <div class="content__game-item-footer">
                 <div class="content__console">
                   <!-- <svg class="content__console-icon" width="17" height="17">
                     <use xlink:href="./img/sprite.svg#icon-pc"></use>
@@ -243,7 +234,7 @@
             </div>
           </li>
           
-          <!-- <li class="content__games-all-item">1</li> -->
+          <!-- <li class="content__game-item">1</li> -->
         </ul>
       </section>
     </main>
