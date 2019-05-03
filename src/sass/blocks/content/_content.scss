@@ -3,7 +3,7 @@
     font-size: 16px;
     font-weight: 400;
 
-    padding: 0 7px 7px 7px;
+    padding: 0 7px 15px 7px;
   }
 
   &__game {
@@ -206,7 +206,7 @@
     }
   }
 
-  // popular
+  // POPULAR
   &__game-popular {
     &-item {
       display: flex;
@@ -239,25 +239,7 @@
     }
   }
 
-  // new game
-  &__game-new {
-    font-size: 14px;
-
-    &-item {
-      width: 175px;
-      height: 100px;
-
-      margin: 0 7px 15px 7px;
-      border-radius: 3px;
-      box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-
-      &:hover {
-        box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-      }
-    }
-  }
-
-  // all game
+  // ALL GAMES
   &__game-all {
     font-size: 14px;
 
