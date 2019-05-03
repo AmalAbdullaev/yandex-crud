@@ -61,6 +61,7 @@
 
       &-description {
         margin: auto 0;
+        max-width: 175px;
       }
 
       &-title {
@@ -221,8 +222,19 @@
         border-radius: 3px 0 0 3px;
       }
 
+      &-title {
+        // font-size: 18px;
+      }
+
+      &-content {
+        margin-bottom: 19px;
+      }
+
       &-text {
-        height: 100px;
+        height: 113px;
+
+        font-size: 14px;
+        line-height: 16px;
       }
     }
   }
