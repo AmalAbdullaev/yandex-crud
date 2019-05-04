@@ -150,6 +150,8 @@
       }
 
       &-count {
+        margin-left: 3px;
+        
         &::before {
           content: "(";
         }

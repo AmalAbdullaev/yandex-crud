@@ -4,12 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <title>Template</title>
+
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#fff" />
   <meta name="format-detection" content="telephone=no" />
+  
   <link rel="stylesheet" media="all" href="css/app.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -66,7 +69,6 @@
 
         <ul class="content__game-list">
           <!-- item -->
-          <!-- <li class="content__game-popular-item"> -->
           <li class="content__game-item content__game-popular-item">
             <!-- cover -->
             <div class="content__game-popular-item-cover-wrapper">
@@ -78,27 +80,7 @@
               <!-- new / rating -->
               <div class="content__game-item-header">
                 <div class="content__game-rating-stars">
-                  <div id="full-stars-example-two">
-                    <div class="rating-group">
-                      <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none"
-                        value="0" type="radio" />
-                      <label aria-label="1 star" class="rating__label" for="rating3-1"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio" />
-                      <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio" />
-                      <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio" />
-                      <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio" />
-                      <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
-                    </div>
-                  </div>
+                  <div class="game-rating"></div>
                 </div>
               </div>
 
@@ -161,27 +143,7 @@
               <!-- new / rating -->
               <div class="content__game-item-header">
                 <div class="content__game-rating-stars">
-                  <div id="full-stars-example-two">
-                    <div class="rating-group">
-                      <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none"
-                        value="0" type="radio" />
-                      <label aria-label="1 star" class="rating__label" for="rating3-1"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio" />
-                      <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio" />
-                      <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio" />
-                      <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio" />
-                      <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
-                          class="rating__icon rating__icon--star fa fa-star"></i></label>
-                      <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
-                    </div>
-                  </div>
+                    <div class="game-rating"></div>
                 </div>
 
                 <div class="content__game-rating">
@@ -237,7 +199,26 @@
   </div>
 
   <!-- BEGIN scripts -->
+
+  <script src="./js/lib/jquery.star-rating-svg.js"></script>
+
+  <script>
+    $(".game-rating").starRating({
+      totalStars: 5,
+      starSize: 20,
+      emptyColor: 'lightgray',
+      hoverColor: '#ffb343',
+      activeColor: '#ffb343',
+      useFullStars: true,
+      starShape: 'rounded',
+      useGradient: false
+    });
+  </script>
+
   <script type="text/javascript" src="js/app.js"></script>
+  <!-- <script type="text/javascript" src="/node_modules/star-rating-svg/src/jquery.star-rating-svg.js"></script> -->
+
+
   <!-- END scripts -->
 </body>
 
