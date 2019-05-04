@@ -212,7 +212,7 @@
   &__game-popular {
     &-item {
       display: flex;
-      width: 367px;
+      width: 375px !important;
 
       &-cover-wrapper {
         height: 240px;
@@ -224,8 +224,9 @@
         border-radius: 3px 0 0 3px;
       }
 
-      &-title {
-        // font-size: 18px;
+      &-info-wrapper {
+        min-width: 210px;
+        max-width: 210px;
       }
 
       &-content {
@@ -239,6 +240,11 @@
         line-height: 16px;
       }
     }
+  }
+
+  // glide slider for popular games section
+  .glide__slides {
+    display: flex;
   }
 
   // ALL GAMES
@@ -256,57 +262,5 @@
         height: 49px;
       }
     }
-  }
-}
-
-// rating copy, потом тут разберусь
-
-#full-stars-example-two {
-  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
-  .rating-group {
-    display: inline-flex;
-  }
-
-  /* make hover effect work properly in IE */
-  .rating__icon {
-    pointer-events: none;
-  }
-
-  /* hide radio inputs */
-  .rating__input {
-    position: absolute !important;
-    left: -9999px !important;
-  }
-
-  /* hide 'none' input from screenreaders */
-  .rating__input--none {
-    display: none;
-  }
-
-  /* set icon padding and size */
-  .rating__label {
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 3px;
-  }
-
-  /* set default star color */
-  .rating__icon--star {
-    color: $orange;
-  }
-
-  /* if any input is checked, make its following siblings grey */
-  .rating__input:checked ~ .rating__label .rating__icon--star {
-    color: #ddd;
-  }
-
-  /* make all stars orange on rating group hover */
-  .rating-group:hover .rating__label .rating__icon--star {
-    color: $orange;
-  }
-
-  /* make hovered input's following siblings grey on hover */
-  .rating__input:hover ~ .rating__label .rating__icon--star {
-    color: #ddd;
   }
 }

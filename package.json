@@ -65,5 +65,7 @@
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-glsl-loader": "^1.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@glidejs/glide": "^3.3.0"
+  }
 }
