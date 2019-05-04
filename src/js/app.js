@@ -9,10 +9,10 @@ new Glide('.glide', {
   type: 'carousel',
   startAt: 0,
   perView: 3.5,
-  // autoplay: 3250,
+  autoplay: 4000,
   hoverpause: true,
   keyboard: true,
-  // perTouch: 5,
+  perTouch: 5,
   gap: 15,
 
 }).mount();

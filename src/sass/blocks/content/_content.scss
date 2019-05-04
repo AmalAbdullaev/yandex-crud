@@ -238,13 +238,10 @@
 
         font-size: 14px;
         line-height: 16px;
+
+        white-space: normal;
       }
     }
-  }
-
-  // glide slider for popular games section
-  .glide__slides {
-    display: flex;
   }
 
   // ALL GAMES
@@ -262,5 +259,32 @@
         height: 49px;
       }
     }
+  }
+}
+
+// glide slider for popular games section
+.glide__slides {
+  display: flex;
+  padding-top: 5px;
+}
+
+.glide__slides-arrow {
+  position: absolute;
+  top: 38%;
+  
+  background-color: transparent;
+  color: #ffb343;
+
+  font-size: 45px;
+
+  &:hover {
+    color: #ffa41b;
+  }
+
+  &-left {
+    left: -30px;
+  }
+  &-right {
+    right: -30px;
   }
 }

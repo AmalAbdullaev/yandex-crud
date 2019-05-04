@@ -1,6 +1,12 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 body {
 	background-color: #edeef0;
 	font-family: 'Roboto', sans-serif;
+
+	// background: rgb(236,140,0);
+	// background: linear-gradient(0deg, rgba(236,140,0,1) 10%, rgba(255,132,0,1) 15%);
 }
 
 .site-header-wrapper {
@@ -23,3 +29,5 @@ body {
   height: 1px;
   margin: -1px;
 }
+
+
