@@ -49,25 +49,25 @@ module.exports = function gameAllJSTemplate(game) {
         tag: 'div',
         cls: 'content__game-item-cover-wrapper',
         content: [{
-            tag: 'div',
-            cls: 'content__bookmark-wrapper',
-            content: {
-              tag: 'input',
-              cls: 'content__bookmark',
-              attrs: {
-                type: "checkbox",
-                title: "Добавить игру в избранное"
-              },
-            }
-          },
-          {
-            tag: 'img',
-            cls: ['content__game-item-cover', 'content__game-all-item-cover'],
-            src: `./img/covers/cover.jpg`,
+          tag: 'div',
+          cls: 'content__bookmark-wrapper',
+          content: {
+            tag: 'input',
+            cls: 'content__bookmark',
             attrs: {
-              alt: "Обложка игры"
-            }
+              type: 'checkbox',
+              title: 'Добавить игру в избранное'
+            },
           }
+        },
+        {
+          tag: 'img',
+          cls: ['content__game-item-cover', 'content__game-all-item-cover'],
+          src: './img/covers/cover.jpg',
+          attrs: {
+            alt: 'Обложка игры'
+          }
+        }
         ]
       },
       {
@@ -75,98 +75,98 @@ module.exports = function gameAllJSTemplate(game) {
         cls: 'content__game-item-info-wrapper',
         // new / rating
         content: [{
+          tag: 'div',
+          cls: 'content__game-item-header',
+          content: [{
             tag: 'div',
-            cls: 'content__game-item-header',
-            content: [{
-                tag: 'div',
-                cls: 'content__game-rating-stars',
-                content: {
-                  tag: 'div',
-                  cls: 'game-rating'
-                }
-              },
-              {
-                tag: 'div',
-                cls: 'content__game-rating',
-                content: [{
-                    tag: 'span',
-                    cls: 'content__game-rating-votes',
-                    content: {
-                      tag: 'span',
-                      cls: 'content__game-rating-votes-count',
-                      content: '245'
-                    }
-                  },
-                  {
-                    tag: 'span',
-                    cls: 'content__game-rating-avg',
-                    content: '8,9'
-                  }
-                ]
-              }
-            ]
-          },
-          // description
-          {
-            tag: 'div',
-            cls: 'content__game-item-content',
+            cls: 'content__game-rating-stars',
             content: {
               tag: 'div',
-              cls: 'content__game-item-description',
-              content: [{
-                  tag: 'h3',
-                  cls: 'content__game-item-title',
-                  content: 'Mortal Kombat 11'
-                },
-                {
-                  tag: 'p',
-                  cls: ['content__game-item-text', 'content__game-all-item-text'],
-                  content: 'Так же, как и предшественник, представляет собой файтинг, выполненный в стиле 2.5D. Наряду с вернувшимися добиваниями'
-                }
-              ]
+              cls: 'game-rating'
             }
           },
-          // console / price
           {
             tag: 'div',
-            cls: 'content__game-item-footer',
+            cls: 'content__game-rating',
             content: [{
-                tag: 'div',
-                cls: 'content__console',
-                content: [{
-                    tag: 'i',
-                    cls: ['content__console-icon', 'fab', 'fa-steam-square']
-                  },
-                  {
-                    tag: 'i',
-                    cls: ['content__console-icon', 'fab', 'fa-playstation']
-                  },
-                  {
-                    tag: 'i',
-                    cls: ['content__console-icon', 'fab', 'fa-xbox']
-                  },
-                  {
-                    tag: 'i',
-                    cls: ['content__console-icon', 'fab', 'fa-nintendo-switch']
-                  }
-                ]
-              },
-              {
-                tag: 'button',
-                cls: 'content__buy-game-button',
-                attrs: {
-                  ariaLabel: "Кнопка, купить игру"
-                },
-                content: {
-                  tag: 'span',
-                  cls: 'content__game-price',
-                  content: '5 799'
-                }
+              tag: 'span',
+              cls: 'content__game-rating-votes',
+              content: {
+                tag: 'span',
+                cls: 'content__game-rating-votes-count',
+                content: '245'
               }
+            },
+            {
+              tag: 'span',
+              cls: 'content__game-rating-avg',
+              content: '8,9'
+            }
             ]
           }
+          ]
+        },
+          // description
+        {
+          tag: 'div',
+          cls: 'content__game-item-content',
+          content: {
+            tag: 'div',
+            cls: 'content__game-item-description',
+            content: [{
+              tag: 'h3',
+              cls: 'content__game-item-title',
+              content: 'Mortal Kombat 11'
+            },
+            {
+              tag: 'p',
+              cls: ['content__game-item-text', 'content__game-all-item-text'],
+              content: 'Так же, как и предшественник, представляет собой файтинг, выполненный в стиле 2.5D. Наряду с вернувшимися добиваниями'
+            }
+            ]
+          }
+        },
+          // console / price
+        {
+          tag: 'div',
+          cls: 'content__game-item-footer',
+          content: [{
+            tag: 'div',
+            cls: 'content__console',
+            content: [{
+              tag: 'i',
+              cls: ['content__console-icon', 'fab', 'fa-steam-square']
+            },
+            {
+              tag: 'i',
+              cls: ['content__console-icon', 'fab', 'fa-playstation']
+            },
+            {
+              tag: 'i',
+              cls: ['content__console-icon', 'fab', 'fa-xbox']
+            },
+            {
+              tag: 'i',
+              cls: ['content__console-icon', 'fab', 'fa-nintendo-switch']
+            }
+            ]
+          },
+          {
+            tag: 'button',
+            cls: 'content__buy-game-button',
+            attrs: {
+              ariaLabel: 'Кнопка, купить игру'
+            },
+            content: {
+              tag: 'span',
+              cls: 'content__game-price',
+              content: '5 799'
+            }
+          }
+          ]
+        }
         ]
       },
     ]
-  }
+  };
 };
