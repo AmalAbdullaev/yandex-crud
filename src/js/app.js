@@ -2,18 +2,13 @@
 
 // sayHello();
 
+import  {glide}  from './lib/glide.js';
+import {Game} from './game.js';
+glide();
 
-import Glide from '@glidejs/glide';
+let game = new Game ();
+game.getListOfGames().then(games => {
+  console.log(games);
+});
 
-new Glide('.glide', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 3.5,
-  autoplay: 4000,
-  hoverpause: true,
-  keyboard: true,
-  perTouch: 5,
-  gap: 15,
-
-}).mount();
 
