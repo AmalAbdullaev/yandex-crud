@@ -12,8 +12,11 @@ export class Game {
       },
       headers: {'Content-Type': 'application/json'}
     })
-      .then(function(response) {
+      .then(response => {
         return response.data;
+      })
+      .catch(error => {
+        console.log(error);
       });
     return game;
   }
@@ -33,7 +36,7 @@ export class Game {
   deleteGame(id) {
 
     let bodyFormData = new FormData();
-    bodyFormData.set('id','5');
+    bodyFormData.set('id',id);
 
     let game = axios({
       method: 'post',
@@ -42,10 +45,67 @@ export class Game {
       config : {headers: {'Content-Type': 'application/json' }},
     }).then (function(response) {
       return response;
+    }).catch(error => {
+      console.log(error);
     });
     return game;
   }
-  addGame() {}
-  editGame() { }
-  vote() {}
+
+  addGame(title,platform,price,description,cover) {
+    let gameToCreate = new FormData();
+    gameToCreate.set('title',title);
+    gameToCreate.set('platform',platform);
+    gameToCreate.set('price', price);
+    gameToCreate.set('description',description);
+    gameToCreate.set('cover',cover);
+    
+    let game = axios({
+      method:'post',
+      url:'http://localhost/add.php',
+      headers: {'Content-Type': 'application/json'},
+      data : gameToCreate
+    })
+      .then(function(response) {
+        return response.data;
+      });
+    return game;
+  }
+
+  editGame(id,title,platform,price,description,cover) {
+    let gameToCreate = new FormData();
+    gameToCreate.set('id', id);
+    gameToCreate.set('title',title);
+    gameToCreate.set('platform',platform);
+    gameToCreate.set('price', price);
+    gameToCreate.set('description',description);
+    gameToCreate.set('cover',cover);
+    
+    let game = axios({
+      method:'post',
+      url:'http://localhost/edit.php',
+      headers: {'Content-Type': 'application/json'},
+      data : gameToCreate
+    })
+      .then(function(response) {
+        return response.data;
+      });
+    return game;
+  }
+
+  voteGame(id, rating) {
+    let gameToCreate = new FormData();
+    gameToCreate.set('id', id);
+    gameToCreate.set('rating',rating);
+    
+    let game = axios({
+      method:'post',
+      url:'http://localhost/vote.php',
+      headers: {'Content-Type': 'application/json'},
+      data : gameToCreate
+    })
+      .then(function(response) {
+        return response.data;
+      });
+    return game;
+  }
 }
