@@ -2,7 +2,18 @@ import axios from 'axios';
 
 export class Game {
 
-  getGame() {}
+  getGame() {
+
+    let game = axios({
+      method:'get',
+      url:'/api/get.php',
+      headers: {'Content-Type': 'application/json'}
+    })
+      .then(function(response) {
+        return response.data;
+      });
+    return game;
+  }
   getListOfGames() {
     let games = axios({
       method:'get',
