@@ -5,12 +5,17 @@ import {glide} from './lib/glide.js';
 import {Game} from './game.js';
 glide();
 
-let game = new Game ();
+let game = new Game();
 
-// CRUD
-// game.getListOfGames().then(games => {
-//   console.log(games);
-// });
+
+game.getListOfGames().then(games => {
+  console.log(games);
+  
+
+  document.querySelector('.content__game-all-list').appendChild(
+    browserJSEngine(games.map(allGameTemplate))
+  );
+});
 
 // game.getGame(2).then(game => {
 //   console.log(game || 'game not found' );
@@ -33,7 +38,5 @@ let game = new Game ();
 // });
 
 
-document.querySelector('.content__game-all-list').appendChild(
-  browserJSEngine(game.map(allGameTemplate))
-);
-console.log(typeof browserJSEngine(game.map(allGameTemplate)));
+
+
