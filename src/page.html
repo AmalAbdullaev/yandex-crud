@@ -9,11 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#fff" />
   <meta name="format-detection" content="telephone=no" />
-  
+
   <!-- global styles -->
   <link rel="stylesheet" media="all" href="css/app.css" />
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- jquery v2 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
@@ -48,14 +49,18 @@
           <span class="site-header__text">Избранные</span>
         </a>
 
+        <!-- add game btn -->
         <div class="site-header__wrapper site-header__add-game-wrapper">
-          <button class="site-header__add-game-button" aria-label="Добавить новую игру">
-            <svg class="site-header__add-game-icon" width="30" height="30">
-              <use xlink:href="./img/sprite.svg#icon-add-game"></use>
-            </svg>
-            <span class="site-header__text"></span>
-          </button>
+          <a class="site-header__add-game-link" href="#add-game-modal" data-modal-open>
+            <button class="site-header__add-game-button" aria-label="Добавить новую игру">
+              <svg class="site-header__add-game-icon" width="30" height="30">
+                <use xlink:href="./img/sprite.svg#icon-add-game"></use>
+              </svg>
+              <span class="site-header__text"></span>
+            </button>
+          </a>
         </div>
+
       </div>
     </div>
   </header>
@@ -66,154 +71,171 @@
     <h1 class="visually-hidden">Витрина с играми</h1>
 
     <div class="site-content-wrapper">
-    <!-- SECTION popular game -->
-    <section class="content__game">
+      <!-- SECTION popular game -->
+      <section class="content__game">
         <h2 class="content__section-title">Популярные</h2>
 
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="content__game-list glide__slides">
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="content__game-list glide__slides">
+              <!-- item -->
+              <li class="content__game-item content__game-popular-item">
+                <!-- cover -->
+                <div class="content__game-popular-item-cover-wrapper">
+                  <!-- img -->
+                  <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg"
+                    alt="Обложка игры" />
+                </div>
+
+                <div class="content__game-item-info-wrapper content__game-popular-item-info-wrapper">
+                  <!-- new / rating -->
+                  <div class="content__game-item-header">
+                    <div class="content__game-rating-stars">
+                      <div class="game-rating"></div>
+                    </div>
+                  </div>
+
+                  <!-- bookmark -->
+                  <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
+
+                  <!-- description -->
+                  <div class="content__game-item-content content__game-popular-item-content">
+                    <div class="content__game-item-description">
+                      <h3 class="content__game-item-title content__game-popular-item-title">
+                        Mortal Kombat 11
+                      </h3>
+                      <p class="content__game-item-text content__game-popular-item-text">
+                        Так же, как и предшественник, представляет собой файтинг,
+                        выполненный в стиле 2.5D. Наряду с вернувшимися
+                        добиваниями
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- console / price -->
+                  <div class="content__game-item-footer">
+                    <div class="content__console">
+                      <!-- <svg class="content__console-icon" width="17" height="17">
+                      <use xlink:href="./img/sprite.svg#icon-pc"></use>
+                    </svg> -->
+                      <i class="content__console-icon fab fa-steam-square"></i>
+                      <i class="content__console-icon fab fa-playstation"></i>
+                      <i class="content__console-icon fab fa-xbox"></i>
+                      <i class="content__console-icon fab fa-nintendo-switch"></i>
+                    </div>
+
+                    <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
+                      <span class="content__game-price">5 799</span>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <!-- end item -->
+            </ul>
+          </div>
+
+          <div data-glide-el="controls">
+            <button class="glide__slides-arrow glide__slides-arrow-left" data-glide-dir="<">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button>
+
+            <button class="glide__slides-arrow glide__slides-arrow-right" data-glide-dir=">">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="site-content-wrapper">
+        <!-- SECTION all game -->
+        <section class="content__game">
+          <h2 class="content__section-title">Все игры</h2>
+
+          <ul class="content__game-list content__game-all-list">
             <!-- item -->
-            <li class="content__game-item content__game-popular-item">
+            <li class="content__game-item content__game-all-item">
               <!-- cover -->
-              <div class="content__game-popular-item-cover-wrapper">
+              <div class="content__game-item-cover-wrapper">
+                <!-- bookmark -->
+                <div class="content__bookmark-wrapper">
+                  <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
+                </div>
                 <!-- img -->
-                <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
+                <img class="content__game-item-cover content__game-all-item-cover" src="./img/covers/cover.jpg"
+                  alt="Обложка игры" />
               </div>
-  
-              <div class="content__game-item-info-wrapper content__game-popular-item-info-wrapper">
+
+              <div class="content__game-item-info-wrapper">
                 <!-- new / rating -->
                 <div class="content__game-item-header">
                   <div class="content__game-rating-stars">
                     <div class="game-rating"></div>
                   </div>
+
+                  <div class="content__game-rating">
+                    <span class="content__game-rating-votes">
+                      <span class="content__game-rating-votes-count">245</span>
+                    </span>
+                    <span class="content__game-rating-avg">8,9</span>
+                  </div>
                 </div>
-  
-                <!-- bookmark -->
-                <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
-  
+
                 <!-- description -->
-                <div class="content__game-item-content content__game-popular-item-content">
+                <div class="content__game-item-content">
                   <div class="content__game-item-description">
-                    <h3 class="content__game-item-title content__game-popular-item-title">
+                    <h3 class="content__game-item-title">
                       Mortal Kombat 11
                     </h3>
-                    <p class="content__game-item-text content__game-popular-item-text">
+                    <p class="content__game-item-text content__game-all-item-text">
                       Так же, как и предшественник, представляет собой файтинг,
                       выполненный в стиле 2.5D. Наряду с вернувшимися
                       добиваниями
                     </p>
                   </div>
                 </div>
-  
+
                 <!-- console / price -->
                 <div class="content__game-item-footer">
                   <div class="content__console">
-                    <!-- <svg class="content__console-icon" width="17" height="17">
-                      <use xlink:href="./img/sprite.svg#icon-pc"></use>
-                    </svg> -->
                     <i class="content__console-icon fab fa-steam-square"></i>
                     <i class="content__console-icon fab fa-playstation"></i>
                     <i class="content__console-icon fab fa-xbox"></i>
                     <i class="content__console-icon fab fa-nintendo-switch"></i>
                   </div>
-  
+
                   <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
                     <span class="content__game-price">5 799</span>
                   </button>
                 </div>
               </div>
             </li>
-            <!-- end item -->
           </ul>
-        </div>
-
-        <div data-glide-el="controls">
-          <button class="glide__slides-arrow glide__slides-arrow-left" data-glide-dir="<">
-            <i class="fas fa-chevron-circle-left"></i>
-          </button>
-      
-          <button class="glide__slides-arrow glide__slides-arrow-right" data-glide-dir=">">
-            <i class="fas fa-chevron-circle-right"></i>
-          </button>
-        </div>
+        </section>
       </div>
-    </section>
-
-    <div class="site-content-wrapper">
-      <!-- SECTION all game -->
-      <section class="content__game">
-        <h2 class="content__section-title">Все игры</h2>
-
-        <ul class="content__game-list">
-          <!-- item -->
-          <li class="content__game-item content__game-all-item">
-            <!-- cover -->
-            <div class="content__game-item-cover-wrapper">
-              <!-- bookmark -->
-              <div class="content__bookmark-wrapper">
-                <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
-              </div>
-              <!-- img -->
-              <img class="content__game-item-cover content__game-all-item-cover" src="./img/covers/cover.jpg" alt="Обложка игры" />
-            </div>
-
-            <div class="content__game-item-info-wrapper">
-              <!-- new / rating -->
-              <div class="content__game-item-header">
-                <div class="content__game-rating-stars">
-                    <div class="game-rating"></div>
-                </div>
-
-                <div class="content__game-rating">
-                  <span class="content__game-rating-votes">
-                    <span class="content__game-rating-votes-count">245</span>
-                  </span>
-                  <span class="content__game-rating-avg">8,9</span>
-                </div>
-              </div>
-
-              <!-- description -->
-              <div class="content__game-item-content">
-                <div class="content__game-item-description">
-                  <h3 class="content__game-item-title">
-                    Mortal Kombat 11
-                  </h3>
-                  <p class="content__game-item-text content__game-all-item-text">
-                    Так же, как и предшественник, представляет собой файтинг,
-                    выполненный в стиле 2.5D. Наряду с вернувшимися
-                    добиваниями
-                  </p>
-                </div>
-              </div>
-
-              <!-- console / price -->
-              <div class="content__game-item-footer">
-                <div class="content__console">
-                  <!-- <svg class="content__console-icon" width="17" height="17">
-                    <use xlink:href="./img/sprite.svg#icon-pc"></use>
-                  </svg> -->
-                  <i class="content__console-icon fab fa-steam-square"></i>
-                  <i class="content__console-icon fab fa-playstation"></i>
-                  <i class="content__console-icon fab fa-xbox"></i>
-                  <i class="content__console-icon fab fa-nintendo-switch"></i>
-                </div>
-
-                <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
-                  <span class="content__game-price">5 799</span>
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </div>
   </main>
   <!-- END main content -->
 
   <!-- BEGIN footer -->
   <footer></footer>
   <!-- END footer -->
+
+  <!-- add game modal begin -->
+  <div id="add-game-modal" style="display:none">
+    <form class="content__game-add-modal">
+      <label for="name">Название игры</label>
+      <input id="name" name="name" required>
+
+      <button>Добавить</button>
+    </form>
+  </div>
+
+  <div class="modal">
+    <div class="modal-inner">
+      <span data-modal-close>&times;</span>
+      <div class="modal-content"></div>
+    </div>
+  </div>
+  <!-- add game modal end -->
 
   <!-- BEGIN scripts -->
   <script type="text/javascript" src="js/app.js"></script>
@@ -232,7 +254,10 @@
       useGradient: false
     });
   </script>
-  <!-- end rating stars -->
+
+  <!-- add game modal -->
+  <script src="./js/lib/vanila-modal.js"></script>
+  <script>var modal = new VanillaModal.default();</script>
 
   <!-- END scripts -->
 </body>

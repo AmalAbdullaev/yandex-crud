@@ -1,17 +1,23 @@
-// import sayHello from './lib/sayHello.js';
+import dustyEngine from 'dusty-template-engine';
+import allGameTemplate from '../templates/game-all.template';
 
-// sayHello();
-
-import  {glide}  from './lib/glide.js';
+import {glide} from './lib/glide.js';
 import {Game} from './game.js';
 glide();
 
-let game = new Game ();
+let game = [2, 1];
+
 // game.getListOfGames().then(games => {
 //   console.log(games);
 // });
-game.getGame().then(game => {
-  console.log(game);
-});
 
- 
+// let gameItem = document.querySelector('.content__game-all-list');
+// gameItem.innerHTML += (dustyEngine(allGameTemplate()));
+
+document.querySelector('.content__game-all-list').appendChild(
+  game.reduce(function(f, game) {
+    // f.appendChild(dustyEngine(allGameTemplate(game)));
+    console.log(dustyEngine(allGameTemplate()));
+    return f;
+  }, document.createDocumentFragment())
+);
