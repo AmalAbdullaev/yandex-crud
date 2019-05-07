@@ -8,6 +8,7 @@ glide();
 
 let game = new Game ();
 
+// CRUD
 // game.getListOfGames().then(games => {
 //   console.log(games);
 // });
@@ -28,6 +29,8 @@ let game = new Game ();
 //   console.log(game || 'game not found' );
 // });
 
-game.voteGame(12,4).then(game => {
-  console.log(game || 'game not found' );
-});
+// game.voteGame(12,4).then(game => {
+//   console.log(game || 'game not found' );
+// });
+
+

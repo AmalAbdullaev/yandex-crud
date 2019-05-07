@@ -108,4 +108,8 @@ export class Game {
       });
     return game;
   }
+
+  searchGame(title) {
+    
+  }
 }
