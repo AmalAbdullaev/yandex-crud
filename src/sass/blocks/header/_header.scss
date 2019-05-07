@@ -48,6 +48,7 @@
 
   // search
   &__search-wrapper {
+    position: relative;
     display: flex;
     height: 35px;
   }
@@ -73,6 +74,26 @@
     font-weight: 500;
 
     border-radius: 0 3px 3px 0;
+
+    &:hover {
+      color: $gray;
+      transition: 0.3s;
+    }
+  }
+
+  // clear
+  &__clear-button {
+    position: absolute;
+    right: 85px;
+    top: 9px;
+
+    width: 30px;
+
+    background-color: transparent;
+    color: $orange;
+
+    font-size: 14px;
+    font-weight: 500;
 
     &:hover {
       color: $gray;
