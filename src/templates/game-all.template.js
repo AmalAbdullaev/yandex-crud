@@ -63,9 +63,9 @@ module.exports = function gameAllJSTemplate(game) {
         {
           tag: 'img',
           cls: ['content__game-item-cover', 'content__game-all-item-cover'],
-          src: './img/covers/cover.jpg',
           attrs: {
-            alt: 'Обложка игры'
+            alt: 'Обложка игры',
+            src: './img/covers/cover.jpg',
           }
         }
         ]
