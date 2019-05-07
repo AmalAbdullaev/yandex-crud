@@ -94,13 +94,13 @@ module.exports = function gameAllJSTemplate(game) {
               content: {
                 tag: 'span',
                 cls: 'content__game-rating-votes-count',
-                content: '245'
+                content: game.votes
               }
             },
             {
               tag: 'span',
               cls: 'content__game-rating-avg',
-              content: '8,9'
+              content: game.rating
             }
             ]
           }
@@ -116,12 +116,12 @@ module.exports = function gameAllJSTemplate(game) {
             content: [{
               tag: 'h3',
               cls: 'content__game-item-title',
-              content: 'Mortal Kombat 11'
+              content: game.title
             },
             {
               tag: 'p',
               cls: ['content__game-item-text', 'content__game-all-item-text'],
-              content: 'Так же, как и предшественник, представляет собой файтинг, выполненный в стиле 2.5D. Наряду с вернувшимися добиваниями'
+              content: game.description
             }
             ]
           }
@@ -135,19 +135,23 @@ module.exports = function gameAllJSTemplate(game) {
             cls: 'content__console',
             content: [{
               tag: 'i',
-              cls: ['content__console-icon', 'fab', 'fa-steam-square']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='SteamOS') ? 'fa-steam-square' : '']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', 'fa-playstation']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='PlayStation') ? 'fa-playstation':'']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', 'fa-xbox']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='Windows') ? 'fa-windows': '']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', 'fa-nintendo-switch']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='MacOs') ? 'fa-apple' : '']
+            },
+            {
+              tag: 'i',
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='Xbox') ? 'fa-xbox' : '']
             }
             ]
           },
@@ -160,7 +164,7 @@ module.exports = function gameAllJSTemplate(game) {
             content: {
               tag: 'span',
               cls: 'content__game-price',
-              content: '5 799'
+              content: game.price || '0'
             }
           }
           ]
