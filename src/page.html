@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Template</title>
+  <title>game CRUD</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -221,7 +221,8 @@
   <!-- END main content -->
 
   <!-- BEGIN footer -->
-  <footer></footer>
+  <footer>
+  </footer>
   <!-- END footer -->
 
   <!-- add game modal begin -->
@@ -245,25 +246,13 @@
   <!-- BEGIN scripts -->
   <script type="text/javascript" src="js/app.js"></script>
 
-  <!-- begin rating stars -->
-  <script type="text/javascript" src="./js/lib/jquery.star-rating-svg.js"></script>
-  <script>
-    $(".game-rating").starRating({
-      totalStars: 5,
-      starSize: 20,
-      emptyColor: 'lightgray',
-      hoverColor: '#ffb343',
-      activeColor: '#ffb343',
-      useFullStars: true,
-      starShape: 'rounded',
-      useGradient: false
-    });
-  </script>
-
   <!-- add game modal -->
   <script src="./js/lib/vanila-modal.js"></script>
-  <script>var modal = new VanillaModal.default();</script>
 
+  <script>
+    var modal = new VanillaModal.default();
+
+  </script>
   <!-- END scripts -->
 </body>
 

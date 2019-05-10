@@ -1,12 +1,17 @@
 import browserJSEngine from './lib/engine';
 import allGameTemplate from '../templates/game-all.template';
 
-import {glide} from './lib/glide.js';
-import {Game} from './game.js';
+import {glide} from './lib/glide';
+import {ratingStars} from './lib/rating-stars';
+import {Game} from './game';
+
+// popular games slider
 glide();
 
-let game = new Game();
+// 5stars rating
+ratingStars();
 
+let game = new Game();
 
 game.getListOfGames().then(games => {
   console.log(games);
@@ -16,6 +21,7 @@ game.getListOfGames().then(games => {
     browserJSEngine(games.map(allGameTemplate))
   );
 });
+
 
 // game.getGame(2).then(game => {
 //   console.log(game || 'game not found' );
@@ -36,7 +42,6 @@ game.getListOfGames().then(games => {
 // game.voteGame(12,4).then(game => {
 //   console.log(game || 'game not found' );
 // });
-
 
 
 

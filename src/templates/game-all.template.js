@@ -79,10 +79,68 @@ module.exports = function gameAllJSTemplate(game) {
           cls: 'content__game-item-header',
           content: [{
             tag: 'div',
-            cls: 'content__game-rating-stars',
+            cls: ['content__game-rating-stars', 'rating-stars'],
             content: {
-              tag: 'div',
-              cls: 'game-rating',
+              tag: 'ul',
+              attrs: {
+                id: 'stars'
+              },
+              content: [{
+                tag: 'li',
+                cls: 'star',
+                attrs: {
+                  'data-value': '1',
+                },
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-star']
+                }
+              },
+              {
+                tag: 'li',
+                cls: 'star',
+                attrs: {
+                  'data-value': '2'
+                },
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-star']
+                }
+              },
+              {
+                tag: 'li',
+                cls: 'star',
+                attrs: {
+                  'data-value': '3'
+                },
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-star']
+                }
+              },
+              {
+                tag: 'li',
+                cls: 'star',
+                attrs: {
+                  'data-value': '4'
+                },
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-star']
+                }
+              },
+              {
+                tag: 'li',
+                cls: 'star',
+                attrs: {
+                  'data-value': '5'
+                },
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-star']
+                }
+              }
+              ]
             }
           },
           {

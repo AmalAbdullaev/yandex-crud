@@ -5,11 +5,15 @@ export function glide() {
     type: 'carousel',
     startAt: 0,
     perView: 3.5,
-    autoplay: 4000,
+    // autoplay: 4000,
     hoverpause: true,
     keyboard: true,
-    perTouch: 5,
+    perTouch: 3,
     gap: 15,
+    peek: {
+      before: 100,
+      after: 50
+    }
   
   }).mount();     
 };
