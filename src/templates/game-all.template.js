@@ -65,7 +65,7 @@ module.exports = function gameAllJSTemplate(game) {
           cls: ['content__game-item-cover', 'content__game-all-item-cover'],
           attrs: {
             alt: 'Обложка игры',
-            src: './img/covers/cover.jpg',
+            src: './img/covers/' + game.id + '.jpg',
           }
         }
         ]
@@ -82,7 +82,7 @@ module.exports = function gameAllJSTemplate(game) {
             cls: 'content__game-rating-stars',
             content: {
               tag: 'div',
-              cls: 'game-rating'
+              cls: 'game-rating',
             }
           },
           {
@@ -135,23 +135,23 @@ module.exports = function gameAllJSTemplate(game) {
             cls: 'content__console',
             content: [{
               tag: 'i',
-              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='SteamOS') ? 'fa-steam-square' : '']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p === 'SteamOS') ? 'fa-steam-square' : '']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='PlayStation') ? 'fa-playstation':'']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p === 'PlayStation') ? 'fa-playstation' : '']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='Windows') ? 'fa-windows': '']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p === 'Windows') ? 'fa-windows' : '']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='MacOs') ? 'fa-apple' : '']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p === 'MacOs') ? 'fa-apple' : '']
             },
             {
               tag: 'i',
-              cls: ['content__console-icon', 'fab', game.platform.find((p) => p==='Xbox') ? 'fa-xbox' : '']
+              cls: ['content__console-icon', 'fab', game.platform.find((p) => p === 'Xbox') ? 'fa-xbox' : '']
             }
             ]
           },
