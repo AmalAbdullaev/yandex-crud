@@ -1,0 +1,225 @@
+.modal {
+  display: none;
+
+  &__title {
+    padding: 25px 25px 0;
+    font-size: 18px;
+  }
+
+  &__view {
+    display: flex;
+
+    padding: 25px;
+
+    width: 750px;
+    height: 450px;
+  }
+
+  &__cover-wrapper {
+    width: 35%;
+    padding: 20px;
+    border-radius: 3px;
+    background-color: orange;
+  }
+
+  &__text-wrapper {
+    width: 65%;
+    padding: 0 0 0 25px;
+  }
+
+  &__field {
+    display: flex;
+
+    padding: 15px;
+    width: 100%;
+
+    font-size: 14px;
+    color: $gray;
+
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+
+    &-description {
+      resize: none;
+      height: 179px;
+    }
+
+    &-price {
+      width: 45%;
+    }
+
+    &-platform-wrapper {
+      margin-left: auto;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+
+    margin: 25px 0;
+  }
+
+  &__platform {
+    width: 40px;
+    height: 35px;
+
+    cursor: pointer;
+    visibility: hidden;
+    
+    font-family: "Font Awesome 5 Brands";
+    font-weight: normal;
+    font-size: 35px;
+    text-align: right;
+    color: #c9c9c9;
+
+    &--mac::before {
+      content: "\f179";
+      visibility: visible;
+    }
+
+    &--steam::before {
+      content: "\f1b7";
+      visibility: visible;
+    }
+
+    &--ps::before {
+      content: "\f3df";
+      visibility: visible;
+    }
+
+    &--xbox::before {
+      content: "\f412";
+      visibility: visible;
+    }
+
+    &--windows::before {
+      content: "\f17a";
+      visibility: visible;
+    }
+
+    &:checked:before {
+      transition: 0.3s;
+      color: $orange;
+    }
+
+    &:hover:before {
+      transition: 0.3s;
+      color: $orange;
+    }
+  }
+
+  &__add-game-wrapper {
+    display: flex;
+  }
+
+  &__add-game-btn {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+
+    padding: 15px 58px;
+    margin-left: auto;
+    margin-top: 25px;
+    background-color: $orange;
+
+    border-radius: 3px;
+
+    &:hover {
+      transition: 0.3s;
+      background-color: $dark-orange;
+    }
+  }
+}
+
+// add game modal
+.vanilla-modal .modal {
+  display: block;
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s, z-index 0s 0.2s;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vanilla-modal .modal>* {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.vanilla-modal .modal:before {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+
+.vanilla-modal.modal-visible .modal {
+  z-index: 99;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.modal-inner {
+  position: relative;
+  overflow: hidden;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.2s, transform 0.2s, z-index 0s 0.2s;
+
+  border-radius: 15px;
+}
+
+.modal-visible .modal-inner {
+  z-index: 100;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+[data-modal-close] {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
+  
+  width: 30px;
+  height: 30px;
+  
+  cursor: pointer;
+
+  font-size: 25px;
+  text-align: center;
+  background: #fff;
+  color: #c9c9c9;
+
+  &::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    content: "\f00d";
+  }
+
+  &:hover {
+    color: $orange;
+  }
+}
