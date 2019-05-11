@@ -11,6 +11,8 @@ import {
   Game
 } from './game';
 
+import { addCover } from './lib/add-cover';
+
 // popular games slider
 glide();
 
@@ -28,6 +30,7 @@ game.getListOfGames().then(games => {
   );
 });
 
+addCover();
 
 // game.getGame(2).then(game => {
 //   console.log(game || 'game not found' );

@@ -234,7 +234,8 @@
     <form class="modal__view">
       <!-- cover -->
       <div class="modal__cover-wrapper">
-        <input name="myFile" type="file">
+        <label class="modal__cover-added" for="pct"></label>
+        <input class="modal__cover" id="pct" name="cover" type="file" />
       </div>
       <!-- text -->
       <div class="modal__text-wrapper">
@@ -282,6 +283,9 @@
   <script src="./js/lib/vanila-modal.js"></script>
   <script>
     var modal = new VanillaModal.default();
+
+
+
 
   </script>
   <!-- END scripts -->
