@@ -110,6 +110,20 @@ export class Game {
   }
 
   searchGame(title) {
-    
+    let game = axios({
+      method:'get',
+      url:'http://localhost/find.php',
+      params : {
+        title:title
+      },
+      headers: {'Content-Type': 'application/json'}
+    })
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    return game;
   }
 }

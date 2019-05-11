@@ -34,14 +34,14 @@
           </span>
         </a>
         <!-- search -->
-        <form class="site-header__search-wrapper" action="/search">
+        <div class="site-header__search-wrapper">
           <input class="site-header__search-input" type="text" placeholder="Введите название игры" />
 
           <button class="site-header__clear-button">
             <i class="fas fa-times-circle"></i>
           </button>
           <button class="site-header__search-button">Поиск</button>
-        </form>
+        </div>
       </div>
 
       <div class="site-header__right-side">
@@ -82,27 +82,27 @@
         <div class="glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="content__game-list glide__slides">
-              <!-- item -->
+              
               <li class="content__game-item content__game-popular-item">
-                <!-- cover -->
+               
                 <div class="content__game-popular-item-cover-wrapper">
-                  <!-- img -->
+                  
                   <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg"
                     alt="Обложка игры" />
                 </div>
 
                 <div class="content__game-item-info-wrapper content__game-popular-item-info-wrapper">
-                  <!-- new / rating -->
+                 
                   <div class="content__game-item-header">
                     <div class="content__game-rating-stars">
                       <div class="game-rating"></div>
                     </div>
                   </div>
 
-                  <!-- bookmark -->
+                  
                   <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
 
-                  <!-- description -->
+                  
                   <div class="content__game-item-content content__game-popular-item-content">
                     <div class="content__game-item-description">
                       <h3 class="content__game-item-title content__game-popular-item-title">
@@ -116,12 +116,10 @@
                     </div>
                   </div>
 
-                  <!-- console / price -->
+              
                   <div class="content__game-item-footer">
                     <div class="content__console">
-                      <!-- <svg class="content__console-icon" width="17" height="17">
-                      <use xlink:href="./img/sprite.svg#icon-pc"></use>
-                    </svg> -->
+ 
                       <i class="content__console-icon fab fa-steam-square"></i>
                       <i class="content__console-icon fab fa-playstation"></i>
                       <i class="content__console-icon fab fa-xbox"></i>
@@ -134,7 +132,7 @@
                   </div>
                 </div>
               </li>
-              <!-- end item -->
+              
             </ul>
           </div>
 
@@ -246,6 +244,25 @@
   <!-- BEGIN scripts -->
   <script type="text/javascript" src="js/app.js"></script>
 
+<<<<<<< HEAD
+=======
+  <!-- begin rating stars -->
+  <script type="text/javascript" src="./js/lib/jquery.star-rating-svg.js"></script>
+  <script>
+    $(".game-rating").starRating({
+      totalStars: 5,
+      starSize: 20,
+      emptyColor: 'lightgray',
+      hoverColor: '#ffb343',
+      activeColor: '#ffb343',
+      useFullStars: true,
+      starShape: 'rounded',
+      useGradient: false
+    });
+  
+  </script>
+
+>>>>>>> server
   <!-- add game modal -->
   <script src="./js/lib/vanila-modal.js"></script>
 
