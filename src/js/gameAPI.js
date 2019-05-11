@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 
-export class Game {
+export class GameAPI {
 
   getGame(id) {
     let game = axios({
@@ -24,7 +24,7 @@ export class Game {
   getListOfGames() {
     let games = axios({
       method:'get',
-      url:'/api/database.json',
+      url:'http://localhost/list.php',
       headers: {'Content-Type': 'application/json'}
     })
       .then(function(response) {
@@ -71,25 +71,27 @@ export class Game {
     return game;
   }
 
-  editGame(id,title,platform,price,description,cover) {
-    let gameToCreate = new FormData();
-    gameToCreate.set('id', id);
-    gameToCreate.set('title',title);
-    gameToCreate.set('platform',platform);
-    gameToCreate.set('price', price);
-    gameToCreate.set('description',description);
-    gameToCreate.set('cover',cover);
+  editGame(game) {
+
+    let gameToUpdate = new FormData();
+    if(game.id) gameToUpdate.set('id', game.id);
+    if(game.title) gameToUpdate.set('title',game.title);
+    if(game.platform) gameToUpdate.set('platform', JSON.stringify(game.platform));
+    if(game.price) gameToUpdate.set('price', game.price);
+    if(game.description) gameToUpdate.set('description',game.description);
+    if(game.cover) gameToUpdate.set('cover',game.cover);
+    if(typeof game.isFavorite !== 'undefined') gameToUpdate.set('isFavorite',game.isFavorite);
     
-    let game = axios({
+    let result = axios({
       method:'post',
       url:'http://localhost/edit.php',
       headers: {'Content-Type': 'application/json'},
-      data : gameToCreate
+      data : gameToUpdate
     })
       .then(function(response) {
         return response.data;
       });
-    return game;
+    return result;
   }
 
   voteGame(id, rating) {

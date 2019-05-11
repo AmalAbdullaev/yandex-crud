@@ -56,8 +56,9 @@ module.exports = function gameAllJSTemplate(game) {
             cls: 'content__bookmark',
             attrs: {
               type: 'checkbox',
-              title: 'Добавить игру в избранное'
-            },
+              title: 'Добавить игру в избранное',
+              name: game.id
+            }
           }
         },
         {

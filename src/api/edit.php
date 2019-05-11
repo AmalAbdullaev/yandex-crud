@@ -3,10 +3,11 @@
     $title = $_POST['title'];
     $platformJSON = $_POST['platform'];
     $price = intval($_POST['price']);
+    $isFavorite = $_POST['isFavorite'];
 
     header('Content-type: application/json');
 
-    if (!$id || !($title || $platformJSON || $price)) {
+    if (!$id || !($title || $platformJSON || $price || $isFavorite)) {
         header('HTTP/1.1 404 Not Found');
         echo json_encode([
             'status' => 'incorrect request'
@@ -31,6 +32,9 @@
             }
             if ($price) {
                 $database[$i]->price = $price;
+            }
+            if ($isFavorite) {
+                $database[$i]->isFavorite = $isFavorite;
             }
         }
     }
