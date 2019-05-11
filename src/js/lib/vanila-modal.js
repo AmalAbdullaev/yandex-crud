@@ -124,7 +124,7 @@
     if (!(el instanceof HTMLElement)) {
       throwError('Not a valid HTML element.');
     }
-    el.setAttribute('class', el.className.split(' ').filter(function (cn) {
+    el.setAttribute('class', el.className.split(' ').filter(function(cn) {
       return cn !== className;
     }).join(' '));
   }

@@ -1,11 +1,7 @@
-import browserJSEngine from './lib/engine';
-import allGameTemplate from '../templates/game-all.template';
-import popularGameTemplate from '../templates/game-popular.template';
-
-
 import {glide} from './lib/glide';
 import {ratingStars} from './lib/rating-stars';
 import {Game} from './game';
+import {renderGames} from './render';
 
 // popular games slider
 glide();
@@ -16,23 +12,27 @@ ratingStars();
 let game = new Game();
 
 game.getListOfGames().then(games => {
-  console.log(games);
-  document.querySelector('.content__game-all-list').appendChild(
-    browserJSEngine(games.map(allGameTemplate))
-  );
-//   document.querySelector('.glide__slides').appendChild(
-//     browserJSEngine(games.map(popularGameTemplate))
-//   );
+  renderGames('.content__game-all-list',games);
 });
 
-let searchButton =document.querySelector('.site-header__search-button');
+let searchButton = document.querySelector('.site-header__search-button');
+let input = document.querySelector('.site-header__search-input');
+let favorite = document.querySelector('.content__bookmark');
+
 searchButton.onclick = function() {
   let title = document.querySelector('.site-header__search-input').value;
   game.searchGame(title).then(games => {
-    console.log(games);
+    renderGames('.content__game-all-list',games);
   });
 };
 
+input.oninput = function() {
+  if(input.value<=2) {
+    game.getListOfGames().then(games => {
+      renderGames('.content__game-all-list',games);
+    });
+  }
+};
 
 
 // game.getGame(2).then(game => {

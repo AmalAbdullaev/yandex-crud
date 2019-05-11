@@ -8,11 +8,7 @@ export function glide() {
     // autoplay: 4000,
     hoverpause: true,
     keyboard: true,
-<<<<<<< HEAD
     perTouch: 3,
-=======
-    // perTouch: 5,
->>>>>>> server
     gap: 15,
     peek: {
       before: 100,
