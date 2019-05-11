@@ -20,8 +20,6 @@ function renderGames(classSelector, elementToRender) {
     
   });
 
-
-
   document.querySelector(classSelector).appendChild(fragment);
   
 }

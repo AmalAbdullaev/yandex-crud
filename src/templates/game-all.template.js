@@ -81,6 +81,9 @@ module.exports = function gameAllJSTemplate(game) {
           content: [{
             tag: 'div',
             cls: ['content__game-rating-stars', 'rating-stars'],
+            attrs: {
+              id: game.id,
+            },
             content: {
               tag: 'ul',
               attrs: {
@@ -159,7 +162,7 @@ module.exports = function gameAllJSTemplate(game) {
             {
               tag: 'span',
               cls: 'content__game-rating-avg',
-              content: game.rating
+              content: (game.rating).toFixed(1)
             }
             ]
           }

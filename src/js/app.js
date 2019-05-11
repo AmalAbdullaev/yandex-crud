@@ -16,9 +16,18 @@ getListOfGames();
 function getListOfGames() {
   gameAPI.getListOfGames().then(games => {
     renderGames('.content__game-all-list',games);
-
   });
 };
+
+function getFavoriteGames() {
+  gameAPI.getListOfGames().then(games => {
+    games = games.filter(function(game) {
+      return game.isFavorite === 'true';
+    });
+    // renderGames('.content__game-all-list',games);
+    console.log(games);
+  });
+}
 
 
 let searchButton = document.querySelector('.site-header__search-button');
@@ -36,6 +45,13 @@ contentGameList.onclick = function(event) {
     });
   }
 };
+
+// stars.onclick = function(event) {
+//   console.log(event.target,'erferf');
+//   if(event.target.className === 'fa-star') {
+//     console.log(event.target,'er');
+//   }
+// };
 
 searchButton.onclick = function() {
   let title = document.querySelector('.site-header__search-input').value;
@@ -58,6 +74,18 @@ clearSearchButton.onclick = function() {
   });
 };
 
+
+contentGameList.onclick = function(event) {
+  if(event.target.className === 'fas fa-star') {
+    let id = event.target.parentNode.parentNode.parentNode.getAttribute('id');
+    let starsCount = event.target.parentNode.getAttribute('data-value');
+
+
+    gameAPI.voteGame(id,starsCount).then(g => {
+      console.log(g);
+    });
+  }
+};
 // gameAPI.getGame(2).then(gameAPI => {
 //   console.log(gameAPI || 'gameAPI not found' );
 // });
