@@ -8,7 +8,7 @@ export function glide() {
     autoplay: 4000,
     hoverpause: true,
     keyboard: true,
-    perTouch: 5,
+    // perTouch: 5,
     gap: 15,
   
   }).mount();     
