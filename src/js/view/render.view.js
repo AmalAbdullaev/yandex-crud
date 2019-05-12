@@ -20,7 +20,6 @@ function renderGames(classSelector, elementToRender) {
     let stars = gameCard.lastChild.firstChild.firstChild.firstChild;
     let star = stars.firstChild;
     for(let i = 1; i <= Math.round(elem.rating); i++) {
-      console.log(star);
       star.classList.add('hover');
       star = star.nextSibling;
     }

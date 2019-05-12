@@ -111,21 +111,15 @@ export class GameModel {
   }
 
   searchGame(title) {
-    let game = axios({
+    let games = axios({
       method:'get',
-      url:'http://localhost/find.php',
-      params : {
-        title:title
-      },
+      url:'http://localhost/list.php',
       headers: {'Content-Type': 'application/json'}
     })
-      .then(response => {
-        return response.data;
-      })
-      .catch(error => {
-        console.log(error);
+      .then(function(response) {
+        return response.data.filter(s => s.title.includes(title));
       });
-    return game;
+    return games;
   }
 
 }
