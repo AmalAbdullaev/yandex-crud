@@ -9,6 +9,8 @@ module.exports = function listeneres() {
   let contentGameList = document.querySelector('.content__game-all-list');
   let clearSearchButton = document.querySelector('.site-header__clear-button');
 
+  let modal = new VanillaModal();
+
 
   let form = document.querySelector('.modal__view');
   let formTitle = document.querySelector('input[name=name]');
@@ -22,7 +24,6 @@ module.exports = function listeneres() {
   let formPlatformMac = document.querySelector('.modal__platform--mac');
   let formPlatformPlayStation = document.querySelector('.modal__platform--ps');
 
-  let modal = new VanillaModal();
 
   form.onsubmit = function(event) {
     event.preventDefault();
@@ -84,5 +85,8 @@ module.exports = function listeneres() {
         });
       });
     }
+    // if(event.target.className === 'content__buy-game-button') {
+    //   modal.open(); 
+    // }
   };
 };

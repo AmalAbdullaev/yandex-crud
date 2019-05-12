@@ -119,13 +119,13 @@ module.exports = function gameAllJSTemplate(game) {
               content: {
                 tag: 'span',
                 cls: 'content__game-rating-votes-count',
-                content: game.votes
+                content: game.votes || '0'
               }
             },
             {
               tag: 'span',
               cls: 'content__game-rating-avg',
-              content: (+game.rating).toFixed(1)
+              content: (game.rating).toFixed(1)
             }
             ]
           }
