@@ -12,7 +12,6 @@ ratingStars();
 // get all games 
 getListOfGames();
 // getFavoriteGames();
-
 //call listeners
 listeners();
 
