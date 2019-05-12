@@ -3,7 +3,8 @@
     font-size: 16px;
     font-weight: 400;
 
-    padding: 0 7px 15px 7px;
+    padding: 0 7px;
+    margin-bottom: 15px;
   }
 
   &__game {
@@ -212,23 +213,35 @@
 
   // POPULAR
   &__game-popular {
+    display: flex;
+
     &-item {
       display: flex;
-      width: 375px !important;
+      width: 349px !important;
 
       &-cover-wrapper {
+        position: relative;
+
         height: 230px;
-        min-width: 165px;
-        max-width: 165px;
+        min-width: 157px;
+        max-width: 157px;
       }
 
       &-cover {
-        border-radius: 3px 0 0 3px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: 3px;
+
+        width: 90%;
+        height: 90%;
       }
 
       &-info-wrapper {
-        min-width: 210px;
-        max-width: 210px;
+        min-width: 192px;
+        max-width: 192px;
+
+        padding: 15px 15px 15px 7px;
       }
 
       &-content {
@@ -236,10 +249,11 @@
       }
 
       &-text {
+        max-width: 170px;
         height: 98px;
 
-        font-size: 14px;
-        line-height: 16px;
+        font-size: 12px;
+        line-height: 14px;
 
         white-space: normal;
       }
@@ -251,7 +265,6 @@
     font-size: 14px;
 
     &-item {
-      // width: 223px;
       width: 204px;
 
       &-cover {
@@ -268,7 +281,76 @@
       flex-wrap: wrap;
     }
   }
+
+  &__filter {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+
+    &-wrapper {
+      display: flex;
+      margin: 5px 0;
+    }
+
+    &-platform {
+      font-size: 20px;
+    }
+
+    &-item {
+      
+    }
+
+    &-ico {
+
+      width: 27px;
+      height: 20px;
+
+      cursor: pointer;
+      visibility: hidden;
+
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
+      font-size: 20px;
+      text-align: right;
+      color: #c9c9c9;
+
+      &--refresh::before {
+        content: "\f2f9";
+        visibility: visible;
+      }
+
+      &--up::before {
+        content: "\f161";
+        visibility: visible;
+      }
+
+      &--down::before {
+        content: "\f160";
+        visibility: visible;
+      }
+
+      &:checked:before {
+        transition: 0.3s;
+        color: $orange;
+      }
+  
+      &:hover:before {
+        transition: 0.3s;
+        color: $orange;
+      }
+
+      &--fix {
+        font-size: 22px !important;
+        width: 27px !important;
+        height: 20px !important;
+
+      }
+    }
+
+  }
 }
+
+
 
 // glide slider for popular games section
 .glide__slides {
