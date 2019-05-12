@@ -1,20 +1,22 @@
 
 import {glide} from './lib/glide';
 import {ratingStars} from './lib/rating-stars';
-import {GameAPI} from './gameAPI';
-import {renderGames} from './render';
+import listeners from './controller/listeners.controller';
+import {getListOfGames, getFavoriteGames} from './controller/main.controller';
+
 
 import { addCover } from './lib/add-cover';
 
 
-let gameAPI = new GameAPI();
 // popular games slider
 glide();
-
 // 5stars rating
 ratingStars();
 // get all games 
 getListOfGames();
+// getFavoriteGames();
+//call listeners
+listeners();
 
 addCover();
 

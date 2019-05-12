@@ -3,6 +3,9 @@ module.exports = function gameAllJSTemplate(game) {
     // item
     tag: 'li',
     cls: ['content__game-item', 'content__game-all-item'],
+    attrs: {
+      id: game.id
+    },
     content: [
       // cover
       {
@@ -41,6 +44,9 @@ module.exports = function gameAllJSTemplate(game) {
           content: [{
             tag: 'div',
             cls: ['content__game-rating-stars', 'rating-stars'],
+            attrs: {
+              id: game.id,
+            },
             content: {
               tag: 'ul',
               attrs: {
@@ -119,7 +125,7 @@ module.exports = function gameAllJSTemplate(game) {
             {
               tag: 'span',
               cls: 'content__game-rating-avg',
-              content: game.rating
+              content: (game.rating).toFixed(1)
             }
             ]
           }

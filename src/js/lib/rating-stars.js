@@ -1,6 +1,6 @@
 export function ratingStars() {
 
-  $(document).ready(function() {
+  $(window).on('load', function() {
 
     /* 1. Visualizing things on Hover - See next part for action on click */
     $('#stars li').on('mouseover', function() {
@@ -20,7 +20,6 @@ export function ratingStars() {
         $(this).removeClass('hover');
       });
     });
-
 
     /* 2. Action to perform on click */
     $('#stars li').on('click', function() {
