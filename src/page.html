@@ -16,8 +16,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-  <!-- jquery v2 -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+  <script src="./js/lib/jquery.min.js">
+    </script>
+    <!-- jquery v2 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -83,57 +85,51 @@
         <div class="glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="content__game-list glide__slides">
-              
+
               <li class="content__game-item content__game-popular-item">
-               
-                <div class="content__game-popular-item-cover-wrapper">
-                  
-                  <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg"
-                    alt="Обложка игры" />
-                </div>
-
-                <div class="content__game-item-info-wrapper content__game-popular-item-info-wrapper">
-                 
-                  <div class="content__game-item-header">
-                    <div class="content__game-rating-stars">
-                      <div class="game-rating"></div>
-                    </div>
+                  <div class="content__game-popular-item-cover-wrapper">
+                    <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg"
+                      alt="Обложка игры" />
                   </div>
 
-                  
-                  <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
+                  <div class="content__game-item-info-wrapper content__game-popular-item-info-wrapper">
+                      <div class="content__game-item-header">
+                        <div class="content__game-rating-stars">
+                          <div class="game-rating"></div>
+                        </div>
+                      </div>
+                        <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
+                        <div class="content__game-item-content content__game-popular-item-content">
+                          <div class="content__game-item-description">
+                            <h3 class="content__game-item-title content__game-popular-item-title">
+                              Mortal Kombat 11
+                            </h3>
+                            <p class="content__game-item-text content__game-popular-item-text">
+                              Так же, как и предшественник, представляет собой файтинг,
+                              выполненный в стиле 2.5D. Наряду с вернувшимися
+                              добиваниями
+                            </p>
+                          </div>
+                        </div>
 
-                  
-                  <div class="content__game-item-content content__game-popular-item-content">
-                    <div class="content__game-item-description">
-                      <h3 class="content__game-item-title content__game-popular-item-title">
-                        Mortal Kombat 11
-                      </h3>
-                      <p class="content__game-item-text content__game-popular-item-text">
-                        Так же, как и предшественник, представляет собой файтинг,
-                        выполненный в стиле 2.5D. Наряду с вернувшимися
-                        добиваниями
-                      </p>
-                    </div>
-                  </div>
+                        <div class="content__game-item-footer">
+                          <div class="content__console">
 
-              
-                  <div class="content__game-item-footer">
-                    <div class="content__console">
- 
-                      <i class="content__console-icon fab fa-steam-square"></i>
-                      <i class="content__console-icon fab fa-playstation"></i>
-                      <i class="content__console-icon fab fa-xbox"></i>
-                      <i class="content__console-icon fab fa-nintendo-switch"></i>
-                    </div>
+                            <div class="content__game-item-footer">
+                              <div class="content__console">
+                                <i class="content__console-icon fab fa-steam-square"></i>
+                                <i class="content__console-icon fab fa-playstation"></i>
+                                <i class="content__console-icon fab fa-xbox"></i>
+                                <i class="content__console-icon fab fa-nintendo-switch"></i>
+                              </div>
 
-                    <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
-                      <span class="content__game-price">5 799</span>
-                    </button>
-                  </div>
-                </div>
+                              <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
+                                <span class="content__game-price">5 799</span>
+                              </button>
+                            </div>
+                          </div>
               </li>
-              
+
             </ul>
           </div>
 
@@ -225,19 +221,17 @@
   <!-- END footer -->
 
   <!-- add game modal begin -->
-  <div id="add-game-modal" style="display:none">
+  <div class="add-game-modal" id="add-game-modal" style="display:none">
 
     <h2 class="modal__title">Добавить игру</h2>
 
     <form class="modal__view">
-      <!-- cover -->
       <div class="modal__cover-wrapper">
         <label class="modal__cover-added" for="pct"></label>
         <input class="modal__cover" id="pct" name="cover" type="file" />
       </div>
-      <!-- text -->
       <div class="modal__text-wrapper">
-        <input class="modal__field" id="name" name="name" placeholder="Название игры" required>
+        <input class="modal__field" id="name" name="name" placeholder="Название игры" value="" required>
 
         <div class="modal__footer">
           <input class="modal__field modal__field-price" id="price" type="number" name="price" placeholder="Цена"
@@ -280,10 +274,11 @@
 
   <!-- add game modal -->
   <script src="./js/lib/vanila-modal.js"></script>
-  
+
   <script>
     var modal = new VanillaModal.default();
-</script>
+
+  </script>
   <!-- END scripts -->
 </body>
 
