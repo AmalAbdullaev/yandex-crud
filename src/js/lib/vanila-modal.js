@@ -1,10 +1,10 @@
 // Vanilla Modal
 // https://github.com/benceg/vanilla-modal
+(function(global, factory) {
 
-(function (global, factory) {
-  if (typeof define === "function" && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     define(['exports'], factory);
-  } else if (typeof exports !== "undefined") {
+  } else if (typeof exports !== 'undefined') {
     factory(exports);
   } else {
     var mod = {
@@ -13,38 +13,38 @@
     factory(mod.exports);
     global.VanillaModal = mod.exports;
   }
-})(this, function (exports) {
+})(this, function(exports) {
   'use strict';
 
-  Object.defineProperty(exports, "__esModule", {
+  Object.defineProperty(exports, '__esModule', {
     value: true
   });
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+      throw new TypeError('Cannot call a class as a function');
     }
   }
 
-  var _createClass = function () {
+  var _createClass = function() {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
         var descriptor = props[i];
         descriptor.enumerable = descriptor.enumerable || false;
         descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
+        if ('value' in descriptor) descriptor.writable = true;
         Object.defineProperty(target, descriptor.key, descriptor);
       }
     }
 
-    return function (Constructor, protoProps, staticProps) {
+    return function(Constructor, protoProps, staticProps) {
       if (protoProps) defineProperties(Constructor.prototype, protoProps);
       if (staticProps) defineProperties(Constructor, staticProps);
       return Constructor;
     };
   }();
 
-  var _extends = Object.assign || function (target) {
+  var _extends = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -83,7 +83,7 @@
   }
 
   function find(arr, callback) {
-    return function (key) {
+    return function(key) {
       var filteredArray = arr.filter(callback);
       return filteredArray[0] ? filteredArray[0][key] : undefined;
     };
@@ -91,8 +91,20 @@
 
   function transitionEndVendorSniff() {
     var el = document.createElement('div');
-    var transitions = [{ key: 'transition', value: 'transitionend' }, { key: 'OTransition', value: 'otransitionend' }, { key: 'MozTransition', value: 'transitionend' }, { key: 'WebkitTransition', value: 'webkitTransitionEnd' }];
-    return find(transitions, function (_ref) {
+    var transitions = [{
+      key: 'transition',
+      value: 'transitionend'
+    }, {
+      key: 'OTransition',
+      value: 'otransitionend'
+    }, {
+      key: 'MozTransition',
+      value: 'transitionend'
+    }, {
+      key: 'WebkitTransition',
+      value: 'webkitTransitionEnd'
+    }];
+    return find(transitions, function(_ref) {
       var key = _ref.key;
       return typeof el.style[key] !== 'undefined';
     })('value');
@@ -115,7 +127,7 @@
     if (!(el instanceof HTMLElement)) {
       throwError('Not a valid HTML element.');
     }
-    el.setAttribute('class', el.className.split(' ').filter(function (cn) {
+    el.setAttribute('class', el.className.split(' ').filter(function(cn) {
       return cn !== className;
     }).concat(className).join(' '));
   }
@@ -159,7 +171,7 @@
     return null;
   }
 
-  var VanillaModal = function () {
+  var VanillaModal = function() {
     function VanillaModal(settings) {
       _classCallCheck(this, VanillaModal);
 
@@ -187,10 +199,10 @@
       key: 'getDomNodes',
       value: function getDomNodes() {
         var _settings = this.settings,
-            modal = _settings.modal,
-            page = _settings.page,
-            modalInner = _settings.modalInner,
-            modalContent = _settings.modalContent;
+          modal = _settings.modal,
+          page = _settings.page,
+          modalInner = _settings.modalInner,
+          modalContent = _settings.modalContent;
 
         return {
           modal: getNode(modal),
@@ -223,8 +235,8 @@
       value: function open(allMatches, e) {
         var page = this.dom.page;
         var _settings2 = this.settings,
-            onBeforeOpen = _settings2.onBeforeOpen,
-            onOpen = _settings2.onOpen;
+          onBeforeOpen = _settings2.onBeforeOpen,
+          onOpen = _settings2.onOpen;
 
         this.closeModal(e);
         if (!(this.current instanceof HTMLElement === false)) {
@@ -250,7 +262,7 @@
         var modal = this.dom.modal;
 
         var css = window.getComputedStyle(modal, null);
-        return Boolean(['transitionDuration', 'oTransitionDuration', 'MozTransitionDuration', 'webkitTransitionDuration'].filter(function (i) {
+        return Boolean(['transitionDuration', 'oTransitionDuration', 'MozTransitionDuration', 'webkitTransitionDuration'].filter(function(i) {
           return typeof css[i] === 'string' && parseFloat(css[i]) > 0;
         }).length);
       }
@@ -258,9 +270,9 @@
       key: 'close',
       value: function close(e) {
         var _settings3 = this.settings,
-            transitions = _settings3.transitions,
-            transitionEnd = _settings3.transitionEnd,
-            onBeforeClose = _settings3.onBeforeClose;
+          transitions = _settings3.transitions,
+          transitionEnd = _settings3.transitionEnd,
+          onBeforeClose = _settings3.onBeforeClose;
 
         var hasTransition = this.detectTransition();
         if (this.isOpen) {

@@ -15,8 +15,10 @@
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script src="./js/lib/jquery.min.js"></script>
   <!-- jquery v2 -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -225,30 +227,64 @@
 
   <!-- add game modal begin -->
   <div id="add-game-modal" style="display:none">
-    <form class="content__game-add-modal">
-      <label for="name">Название игры</label>
-      <input id="name" name="name" required>
 
-      <button>Добавить</button>
+    <h2 class="modal__title">Добавить игру</h2>
+
+    <form class="modal__view">
+      <!-- cover -->
+      <div class="modal__cover-wrapper">
+        <label class="modal__cover-added" for="pct"></label>
+        <input class="modal__cover" id="pct" name="cover" type="file" />
+      </div>
+      <!-- text -->
+      <div class="modal__text-wrapper">
+        <input class="modal__field" id="name" name="name" placeholder="Название игры" required>
+
+        <div class="modal__footer">
+          <input class="modal__field modal__field-price" id="price" type="number" name="price" placeholder="Цена"
+            required>
+
+          <div class="modal__field-platform-wrapper">
+            <input class="modal__platform modal__platform--ps" type="checkbox" name="PlayStation" value="PlayStation" />
+            <input class="modal__platform modal__platform--xbox" type="checkbox" name="Xbox" value="Xbox" />
+            <input class="modal__platform modal__platform--steam" type="checkbox" name="SteamOS" value="SteamOS" />
+            <input class="modal__platform modal__platform--windows" type="checkbox" name="windows" value="Windows" />
+            <input class="modal__platform modal__platform--mac" type="checkbox" name="MacOs" value="MacOs" />
+          </div>
+        </div>
+
+        <textarea class="modal__field modal__field-description" id="description" name="description"
+          placeholder="Описание игры" required></textarea>
+
+        <div class="modal__add-game-wrapper">
+          <button class="modal__add-game-btn" type="submit">Добавить</button>
+        </div>
+      </div>
+
     </form>
   </div>
 
   <div class="modal">
-    <div class="modal-inner">
-      <span data-modal-close>&times;</span>
+    <div class="modal-inner ">
+      <span data-modal-close></span>
       <div class="modal-content"></div>
     </div>
   </div>
   <!-- add game modal end -->
+
+
+
 
   <!-- BEGIN scripts -->
   <script type="text/javascript" src="js/app.js"></script>
 
   <!-- add game modal -->
   <script src="./js/lib/vanila-modal.js"></script>
-
   <script>
     var modal = new VanillaModal.default();
+
+
+
 
   </script>
   <!-- END scripts -->
