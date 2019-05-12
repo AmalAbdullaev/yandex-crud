@@ -304,12 +304,14 @@
 // надо будет тут все нормально назвать
 /* Rating Star Widgets Style */
 .rating-stars ul {
+  // display: -webkit-box;
+  // display: -ms-flexbox;
   display: flex;
   list-style-type: none;
   padding: 0;
 
-  -moz-user-select: none;
-  -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -webkit-user-select: none;
 }
 
 .rating-stars ul>li.star {

@@ -27,11 +27,11 @@ export function ratingStars() {
       var onStar = parseInt($(this).data('value'), 10); // The star currently selected
       var stars = $(this).parent().children('li.star');
 
-      for (let i = 0; i < stars.length; i++) {
+      for (var i = 0; i < stars.length; i++) {
         $(stars[i]).removeClass('selected');
       }
 
-      for (let i = 0; i < onStar; i++) {
+      for (var i = 0; i < onStar; i++) {
         $(stars[i]).addClass('selected');
       }
 
@@ -47,7 +47,9 @@ export function ratingStars() {
 
     });
 
+
   });
+
 
   function responseMessage(msg) {
     $('.success-box').fadeIn(200);
