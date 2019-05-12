@@ -14,15 +14,48 @@ module.exports = function gameAllJSTemplate(game) {
         content: [{
           tag: 'div',
           cls: 'content__bookmark-wrapper',
-          content: {
-            tag: 'input',
-            cls: 'content__bookmark',
-            attrs: {
-              type: 'checkbox',
-              title: 'Добавить игру в избранное',
-              name: game.id
+          content: [
+            {
+              // edit game
+              tag: 'a',
+              attrs: {
+                href: '#add-game-modal',
+                'data-modal-open': ''
+              },
+              content: {
+                tag: 'li',
+                cls: 'content__edit-game',
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-pen']
+                }
+              }
+            },
+            {
+              tag: 'a',
+              attrs: {
+                href: '',
+              },
+              // delete game
+              content: {
+                tag: 'li',
+                cls: 'content__delete-game',
+                content: {
+                  tag: 'i',
+                  cls: ['fas', 'fa-trash']
+                }
+              }
+            },
+            {
+              tag: 'input',
+              cls: 'content__bookmark',
+              attrs: {
+                type: 'checkbox',
+                title: 'Добавить игру в избранное',
+                name: game.id
+              }
             }
-          }
+          ]
         },
         {
           tag: 'img',

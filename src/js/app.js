@@ -1,4 +1,3 @@
-
 import {glide} from './lib/glide';
 import {ratingStars} from './lib/rating-stars';
 import listeners from './controller/listeners.controller';
@@ -9,7 +8,7 @@ import { addCover } from './lib/add-cover';
 
 
 // popular games slider
-glide();
+// glide();
 // 5stars rating
 ratingStars();
 // get all games 
