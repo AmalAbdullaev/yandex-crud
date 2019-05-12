@@ -53,7 +53,7 @@ export class GameModel {
   addGame(title,platform,price,description,cover) {
     let gameToCreate = new FormData();
     gameToCreate.set('title',title);
-    gameToCreate.set('platform',platform);
+    gameToCreate.set('platform',JSON.stringify(platform));
     gameToCreate.set('price', price);
     gameToCreate.set('description',description);
     gameToCreate.set('cover',cover);

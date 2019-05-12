@@ -229,7 +229,7 @@
 
     <h2 class="modal__title">Добавить игру</h2>
 
-    <form class="modal__view">
+    <form class="modal__view" action="http://localhost/add.php" method="POST" enctype="Content-type: application/json">
       <!-- cover -->
       <div class="modal__cover-wrapper">
         <label class="modal__cover-added" for="pct"></label>
@@ -271,9 +271,6 @@
   </div>
   <!-- add game modal end -->
 
-
-
-
   <!-- BEGIN scripts -->
   <script type="text/javascript" src="js/app.js"></script>
   <script src="./js/lib/jquery.min.js"></script>
@@ -281,9 +278,7 @@
   <!-- add game modal -->
   <script src="./js/lib/vanila-modal.js"></script>
   
-  <script>
-    var modal = new VanillaModal.default();
-</script>
+
   <!-- END scripts -->
 </body>
 

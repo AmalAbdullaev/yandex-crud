@@ -125,7 +125,7 @@ module.exports = function gameAllJSTemplate(game) {
             {
               tag: 'span',
               cls: 'content__game-rating-avg',
-              content: (game.rating).toFixed(1)
+              content: (+game.rating).toFixed(1)
             }
             ]
           }

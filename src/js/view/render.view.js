@@ -11,13 +11,13 @@ function renderGames(classSelector, elementToRender) {
 
 
   elementToRender.forEach(function(elem) {
-    let gameCard = fragment.getElementById(elem.id);
-    let favotite = gameCard.firstChild.firstChild.firstChild;
+    let favotite = fragment.querySelector("input[name='" +elem.id+"']");
     if(elem.isFavorite==='true') 
-      favotite.setAttribute('checked',true); 
+      favotite.setAttribute('checked',true);
     else favotite.removeAttribute('checked');
 
-    let stars = gameCard.lastChild.firstChild.firstChild.firstChild;
+    let gameBlock = fragment.querySelector("[id='"+elem.id+"']");
+    let stars = gameBlock.querySelector("[id='stars']");
     let star = stars.firstChild;
     for(let i = 1; i <= Math.round(elem.rating); i++) {
       star.classList.add('hover');
