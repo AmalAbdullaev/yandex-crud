@@ -1,7 +1,6 @@
 import axios from 'axios';
-import qs from 'qs';
 
-export class GameAPI {
+export class GameModel {
 
   getGame(id) {
     let game = axios({

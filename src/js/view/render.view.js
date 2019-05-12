@@ -1,11 +1,10 @@
-import browserJSEngine from './lib/engine';
-import allGameTemplate from '../templates/game-all.template';
-import popularGameTemplate from '../templates/game-popular.template';
+import browserJSEngine from '../lib/engine';
+import allGameTemplate from '../../templates/game-all.template';
+import popularGameTemplate from '../../templates/game-popular.template';
 
 function renderGames(classSelector, elementToRender) {
   document.querySelector(classSelector).innerHTML = '';
   elementToRender = Array.isArray(elementToRender) ? elementToRender : [elementToRender];
-
 
   let fragment = browserJSEngine(elementToRender.map(allGameTemplate));
   let inputArray = fragment.querySelectorAll('.content__bookmark');
@@ -19,9 +18,7 @@ function renderGames(classSelector, elementToRender) {
     });
     
   });
-
   document.querySelector(classSelector).appendChild(fragment);
-  
 }
 
 module.exports = { renderGames };
