@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <script src="./js/lib/jquery.min.js"></script>
+  <script src="./js/lib/jquery.min.js"></script>
   <!-- jquery v2 -->
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
 </head>
@@ -228,19 +228,17 @@
   <!-- END footer -->
 
   <!-- add game modal begin -->
-  <div id="add-game-modal" style="display:none">
+  <div class="add-game-modal" id="add-game-modal" style="display:none">
 
     <h2 class="modal__title">Добавить игру</h2>
 
     <form class="modal__view">
-      <!-- cover -->
       <div class="modal__cover-wrapper">
         <label class="modal__cover-added" for="pct"></label>
         <input class="modal__cover" id="pct" name="cover" type="file" />
       </div>
-      <!-- text -->
       <div class="modal__text-wrapper">
-        <input class="modal__field" id="name" name="name" placeholder="Название игры" required>
+        <input class="modal__field" id="name" name="name" placeholder="Название игры" value="" required>
 
         <div class="modal__footer">
           <input class="modal__field modal__field-price" id="price" type="number" name="price" placeholder="Цена"
@@ -284,9 +282,6 @@
   <script src="./js/lib/vanila-modal.js"></script>
   <script>
     var modal = new VanillaModal.default();
-
-
-
 
   </script>
   <!-- END scripts -->
