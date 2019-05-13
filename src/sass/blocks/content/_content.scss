@@ -96,24 +96,28 @@
 
   &__edit-game {
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 40px;
     text-decoration: none;
     color: #c9c9c9;
+    text-shadow: 0 0 1px #616161;
     
     &:hover {
+      text-shadow: none;
       color: #ff3333;
     }
   }
 
   &__delete-game {
     position: absolute;
-    top: 5px;
+    top: 7px;
     right: 65px;
     text-decoration: none;
     color: #c9c9c9;
+    text-shadow: 0 0 1px #616161;
 
     &:hover {
+      text-shadow: none;
       color: #ff3333;
     }
   }
@@ -375,8 +379,6 @@
 
   }
 }
-
-
 
 // glide slider for popular games section
 .glide__slides {

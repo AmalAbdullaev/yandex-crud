@@ -9,7 +9,6 @@ function renderGames(classSelector, elementToRender) {
   let fragment = browserJSEngine(elementToRender.map(allGameTemplate));
   // let inputArray = fragment.querySelectorAll('#');
 
-
   elementToRender.forEach(function(elem) {
     let gameCard = fragment.getElementById(elem.id);
     let favotite = gameCard.firstChild.firstChild.firstChild;
