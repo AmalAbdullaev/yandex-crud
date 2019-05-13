@@ -9,7 +9,6 @@ function renderGames(classSelector, elementToRender) {
   let fragment = browserJSEngine(elementToRender.map(allGameTemplate));
   // let inputArray = fragment.querySelectorAll('#');
 
-
   elementToRender.forEach(function(elem) {
     let favotite = fragment.querySelector("input[name='" +elem.id+"']");
     if(elem.isFavorite==='true') 
@@ -33,7 +32,7 @@ function renderPopularGames(classSelector, elementToRender) {
   document.querySelector(classSelector).innerHTML = '';
   elementToRender = Array.isArray(elementToRender) ? elementToRender : [elementToRender];
 
-  let fragment = browserJSEngine(elementToRender.map(allGameTemplate));
+  let fragment = browserJSEngine(elementToRender.map(popularGameTemplate));
   document.querySelector(classSelector).appendChild(fragment);
 }
 
