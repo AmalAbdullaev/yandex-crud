@@ -18,7 +18,7 @@ module.exports = function gameAllJSTemplate(game) {
             // edit game
             tag: 'a',
             attrs: {
-              href: '#add-game-modal',
+              href: '#edit-game-modal',
               'data-modal-open': ''
             },
             content: {

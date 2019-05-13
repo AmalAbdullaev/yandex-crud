@@ -1,9 +1,13 @@
 import {GameModel} from '../model/game.model';
 import {renderGames} from '../view/render.view';
+import initEditModalController from './edit-modal.controller';
+import initAddModalController from './add-modal.controller';
 import VanillaModal from '../lib/vanila-modal';
 
-module.exports = function listeneres() {
+
+module.exports = function initListeneres() {
   let gameModel = new GameModel();
+  let modal = new VanillaModal();
   let searchButton = document.querySelector('.site-header__search-button');
   let input = document.querySelector('.site-header__search-input');
   let contentGameList = document.querySelector('.content__game-all-list');
@@ -16,46 +20,10 @@ module.exports = function listeneres() {
   let descFilter = document.querySelector('.content__filter-ico--up');
   let ascFilter = document.querySelector('.content__filter-ico--down');
   let refresh = document.querySelector('.content__filter-ico--refresh');
-
-
-  let modal = new VanillaModal();
-
-
-  let form = document.querySelector('.modal__view');
-  let formTitle = document.querySelector('input[name=name]');
-  let formPrice = document.querySelector('input[name=price]');
-  let formDescription = document.querySelector('.modal__field-description');
-  let formCover = document.querySelector('input[name=cover]');
-
-  let formPlatformSteam = document.querySelector('.modal__platform--steam');
-  let formPlatformXbox = document.querySelector('.modal__platform--xbox');
-  let formPlatformWindows = document.querySelector('.modal__platform--windows');
-  let formPlatformMac = document.querySelector('.modal__platform--mac');
-  let formPlatformPlayStation = document.querySelector('.modal__platform--ps');
+  //init add modal 
+  initAddModalController(modal);
   
 
-
-  form.onsubmit = function(event) {
-    event.preventDefault();
-
-    let formPlatform = [];
-    if(formPlatformMac.checked)
-      formPlatform.push(formPlatformMac.value);
-    if(formPlatformWindows.checked)
-      formPlatform.push(formPlatformWindows.value);
-    if(formPlatformXbox.checked)
-      formPlatform.push(formPlatformXbox.value);
-    if(formPlatformPlayStation.checked)
-      formPlatform.push(formPlatformPlayStation.value);
-    if(formPlatformSteam.checked)
-      formPlatform.push(formPlatformSteam.value);
-
-    // console.log(formTitle.value,formPlatform,formPrice.value,formDescription.value);
-    gameModel.addGame(formTitle.value,formPlatform,formPrice.value,formDescription.value).then(result => {
-      console.log(result);
-    });
-    modal.close();
-  };
 
   searchButton.onclick = function() {
     let title = document.querySelector('.site-header__search-input').value;
@@ -94,6 +62,11 @@ module.exports = function listeneres() {
           console.log(g || 'game not found' );
         });
       });
+    }
+
+    if(event.target.className === 'content__edit-game fas fa-pen') {
+      console.log('frf');
+      initEditModalController(modal);
     }
 
   };

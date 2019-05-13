@@ -211,14 +211,56 @@
 
     </form>
   </div>
+  <!-- add game modal end -->
 
+    <!-- game modal  begin point of entry -->
   <div class="modal">
     <div class="modal-inner ">
       <span data-modal-close></span>
       <div class="modal-content"></div>
     </div>
   </div>
-  <!-- add game modal end -->
+
+    <!-- game modal  end point of entry -->
+
+    <!-- edit game modal begin -->
+    <div class="add-game-modal" id="edit-game-modal" style="display:none">
+
+      <h2 class="modal__title">Добавить игру</h2>
+  
+      <form class="modal__view">
+        <div class="modal__cover-wrapper">
+          <label class="modal__cover-added" for="pct"></label>
+          <input class="modal__cover" id="pct" name="cover" type="file" />
+        </div>
+        <div class="modal__text-wrapper">
+          <input class="modal__field" id="name" name="name" placeholder="Название игры" value="" required>
+  
+          <div class="modal__footer">
+            <input class="modal__field modal__field-price" id="price" type="number" name="price" placeholder="Цена"
+              required>
+  
+            <div class="modal__field-platform-wrapper">
+              <input class="modal__platform modal__platform--ps" type="checkbox" name="PlayStation" value="PlayStation" />
+              <input class="modal__platform modal__platform--xbox" type="checkbox" name="Xbox" value="Xbox" />
+              <input class="modal__platform modal__platform--steam" type="checkbox" name="SteamOS" value="SteamOS" />
+              <input class="modal__platform modal__platform--windows" type="checkbox" name="windows" value="Windows" />
+              <input class="modal__platform modal__platform--mac" type="checkbox" name="MacOs" value="MacOs" />
+            </div>
+          </div>
+  
+          <textarea class="modal__field modal__field-description" id="description" name="description"
+            placeholder="Описание игры" required></textarea>
+  
+          <div class="modal__add-game-wrapper">
+            <button class="modal__add-game-btn" type="submit">Добавить</button>
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  
+    <!-- edit game modal end -->
 
   <!-- BEGIN scripts -->
   <script type="text/javascript" src="js/app.js"></script>

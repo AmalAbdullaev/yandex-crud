@@ -1,23 +1,30 @@
 import {glide} from './lib/glide';
 import {ratingStars} from './lib/rating-stars';
-import listeners from './controller/listeners.controller';
+import initListeners from './controller/listeners.controller';
 import {getListOfGames, getFavoriteGames, getPopularGames} from './controller/main.controller';
 import { addCover } from './lib/add-cover';
 
 
-// popular games slider
-// glide();
-// 5stars rating
-ratingStars();
-// get all games 
-getListOfGames();
-// getFavoriteGames();
-// popular games
-getPopularGames();
-//call listeners
-listeners();
+(function main() {
 
-addCover();
+
+  // popular games slider
+  // glide();
+  // 5stars rating
+  ratingStars();
+  // get all games 
+  getListOfGames();
+  // getFavoriteGames();
+  // popular games
+  getPopularGames();
+  //call listeners
+  initListeners();
+
+
+
+  addCover();
+})();
+
 
 // gameAPI.getGame(2).then(gameAPI => {
 //   console.log(gameAPI || 'gameAPI not found' );
