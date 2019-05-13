@@ -2,6 +2,7 @@
     $id = intval($_GET['id']);
 
     header('Content-type: application/json');
+    header('Access-Control-Allow-Origin: *');
 
     if (!$id) {
         header('HTTP/1.1 404 Not Found');

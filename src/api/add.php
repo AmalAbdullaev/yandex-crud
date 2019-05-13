@@ -2,8 +2,11 @@
     $title = $_POST['title'];
     $platformJSON = $_POST['platform'];
     $price = intval($_POST['price']);
+    $description = $_POST['description'];
+    $cover = $_POST['cover'];
 
     header('Content-type: application/json');
+    header('Access-Control-Allow-Origin: *');
 
     if (!$title || !$platformJSON || !$price) {
         header('HTTP/1.1 404 Not Found');
@@ -31,7 +34,11 @@
         'title' => $title,
         'platform' => $platform,
         'price' => $price,
-        'votes' => 0
+        'votes' => 0,
+        'description' => $description,
+        'cover' => $cover,
+        'isFavorite' => false,
+        'rating' => 0
     ]);
 
     file_put_contents('database.json', json_encode($database));

@@ -4,7 +4,12 @@
 
     header('Content-type: application/json');
 
-    if (!$id || !$rating || ($rating > 10 || $rating < 0)) {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Allow-Credentials: true');
+
+    if (!$id || !$rating || ($rating > 5 || $rating < 0)) {
         header('HTTP/1.1 404 Not Found');
         echo json_encode([
             'status' => 'incorrect request'

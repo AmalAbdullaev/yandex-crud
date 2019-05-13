@@ -7,7 +7,12 @@
 
     header('Content-type: application/json');
 
-    if (!$id || !($title || $platformJSON || $price || $isFavorite)) {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Allow-Credentials: true');
+
+    if (!$id || !($title || $platformJSON || $price|| $isFavorite)) {
         header('HTTP/1.1 404 Not Found');
         echo json_encode([
             'status' => 'incorrect request'

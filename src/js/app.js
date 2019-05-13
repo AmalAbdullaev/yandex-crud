@@ -3,11 +3,10 @@ import {ratingStars} from './lib/rating-stars';
 import initListeners from './controller/listeners.controller';
 import {getListOfGames, getPopularGames} from './controller/main.controller';
 import { addCover } from './lib/add-cover';
-
+import { pureSlider } from './lib/pure-slider';
+import { goTop } from './lib/go-top';
 
 (function main() {
-
-
   // popular games slider
   // glide();
   // 5stars rating
@@ -19,9 +18,8 @@ import { addCover } from './lib/add-cover';
   getPopularGames();
   //call listeners
   initListeners();
-
-
-
+  pureSlider();
+  goTop();
   addCover();
 })();
 

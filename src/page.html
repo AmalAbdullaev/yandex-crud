@@ -1,146 +1,113 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>game CRUD</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>game CRUD</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="format-detection" content="telephone=no" />
 
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fff" />
-  <meta name="format-detection" content="telephone=no" />
+    <!-- global styles -->
+    <link rel="stylesheet" media="all" href="css/app.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
 
-  <!-- global styles -->
-  <link rel="stylesheet" media="all" href="css/app.css" />
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-  <!-- jquery v2 -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
-</head>
-
-<body>
-  <!-- BEGIN header -->
-  <header class="site-header">
-    <div class="site-header-wrapper">
-      <div class="site-header__left-side">
-        <!-- logo -->
-        <a href="#" class="site-header__wrapper site-header__logo-wrapper" aria-label="Логотип gameCRUD">
-          <svg class="site-header__logo-icon" width="32" height="32">
-            <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
-          </svg>
-          <span class="site-header__text">
-            <strong>GAME-CRUD</strong>
-          </span>
-        </a>
-        <!-- search -->
-        <div class="site-header__search-wrapper">
-          <input class="site-header__search-input" type="text" placeholder="Введите название игры" />
-
-          <button class="site-header__clear-button">
-            <i class="fas fa-times-circle"></i>
-          </button>
-          <button class="site-header__search-button">Поиск</button>
-        </div>
-      </div>
-
-      <div class="site-header__right-side">
-        <!-- favorite -->
-        <a class="site-header__wrapper site-header__favorite-wrapper" aria-label="Избранные игры">
-          <svg class="site-header__favorite-icon" width="16" height="16">
-            <use xlink:href="./img/sprite.svg#icon-favorite"></use>
-          </svg>
-          <span class="site-header__text">Избранные</span>
-        </a>
-
-        <!-- add game btn -->
-        <div class="site-header__wrapper site-header__add-game-wrapper">
-          <a class="site-header__add-game-link" href="#add-game-modal" data-modal-open>
-            <button class="site-header__add-game-button" aria-label="Добавить новую игру">
-              <svg class="site-header__add-game-icon" width="30" height="30">
-                <use xlink:href="./img/sprite.svg#icon-add-game"></use>
-              </svg>
-              <span class="site-header__text"></span>
-            </button>
+  <body>
+    <!-- BEGIN header -->
+    <header class="site-header">
+      <div class="site-header-wrapper">
+        <!-- left side -->
+        <div class="site-header__left-side">
+          <!-- logo -->
+          <a
+            href="#"
+            class="site-header__wrapper site-header__logo-wrapper"
+            aria-label="Логотип gameCRUD"
+          >
+            <svg class="site-header__logo-icon" width="32" height="32">
+              <use xlink:href="./img/sprite.svg#icon-gamepad"></use>
+            </svg>
+            <span class="site-header__text">
+              <strong>GAME-CRUD</strong>
+            </span>
           </a>
-        </div>
+          <!-- search -->
+          <div class="site-header__search-wrapper">
+            <input
+              class="site-header__search-input"
+              type="text"
+              placeholder="Введите название игры"
+            />
 
-      </div>
-    </div>
-  </header>
-  <!-- END header -->
-
-  <!-- BEGIN main content -->
-  <main class="content">
-    <h1 class="visually-hidden">Витрина с играми</h1>
-
-    <div class="site-content-wrapper">
-      <!-- SECTION popular game -->
-      <section class="content__game">
-        <h2 class="content__section-title">Популярные</h2>
-
-        <!-- <div class="glide"> -->
-        <!-- <div class="glide__track" data-glide-el="track"> -->
-        <!-- <ul class="content__game-list glide__slides"> -->
-        <ul class="content__game-list content__game-popular">
-          <!-- <li class="content__game-item content__game-popular-item">
-            <div class="content__game-popular-item-cover-wrapper">
-              <img class="content__game-item-cover content__game-popular-item-cover" src="./img/covers/cover.jpg"
-                alt="Обложка игры" />
-            </div>
-
-            <div class="content__game-item-info-wrapper content__game-popular-item-info-wrapper">
-              <div class="content__game-item-header">
-                <div class="content__game-rating-stars">
-                  <div class="game-rating"></div>
-                </div>
-              </div>
-              <input class="content__bookmark" type="checkbox" title="Добавить игру в избранное">
-              <div class="content__game-item-content content__game-popular-item-content">
-                <div class="content__game-item-description">
-                  <h3 class="content__game-item-title content__game-popular-item-title">
-                    Mortal Kombat 11
-                  </h3>
-                  <p class="content__game-item-text content__game-popular-item-text">
-                    Так же, как и предшественник, представляет собой файтинг,
-                    выполненный в стиле 2.5D. Наряду с вернувшимися
-                    добиваниями вернувшимися добиваниями вернувшимися
-                  </p>
-                </div>
-              </div>
-
-              <div class="content__game-item-footer">
-                <div class="content__console">
-                  <i class="content__console-icon fab fa-steam-square"></i>
-                  <i class="content__console-icon fab fa-playstation"></i>
-                  <i class="content__console-icon fab fa-xbox"></i>
-                  <i class="content__console-icon fab fa-nintendo-switch"></i>
-                </div>
-
-                <button class="content__buy-game-button" aria-label="Кнопка, купить игру">
-                  <span class="content__game-price">5 799</span>
-                </button>
-              </div>
-            </div>
-          </li> -->
-    
-        </ul>
-        <!-- </div>
-
-          <div data-glide-el="controls">
-            <button class="glide__slides-arrow glide__slides-arrow-left" data-glide-dir="<">
-              <i class="fas fa-chevron-circle-left"></i>
+            <button class="site-header__clear-button">
+              <i class="fas fa-times-circle"></i>
             </button>
-
-            <button class="glide__slides-arrow glide__slides-arrow-right" data-glide-dir=">">
-              <i class="fas fa-chevron-circle-right"></i>
-            </button>
+            <button class="site-header__search-button">Поиск</button>
           </div>
-        </div> -->
-      </section>
+        </div>
+        <!-- right side -->
+        <div class="site-header__right-side">
+          <!-- favorite -->
+          <a
+            href="#"
+            class="site-header__wrapper site-header__favorite-wrapper"
+            aria-label="Избранные игры"
+          >
+            <svg class="site-header__favorite-icon" width="16" height="16">
+              <use xlink:href="./img/sprite.svg#icon-favorite"></use>
+            </svg>
+            <span class="site-header__text">Избранные</span>
+          </a>
+          <!-- add game btn -->
+          <div class="site-header__wrapper site-header__add-game-wrapper">
+            <a
+              class="site-header__add-game-link"
+              href="#add-game-modal"
+              data-modal-open
+            >
+              <button
+                class="site-header__add-game-button"
+                aria-label="Добавить новую игру"
+              >
+                <svg class="site-header__add-game-icon" width="30" height="30">
+                  <use xlink:href="./img/sprite.svg#icon-add-game"></use>
+                </svg>
+                <span class="site-header__text"></span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END header -->
+
+    <!-- BEGIN main content -->
+    <main class="content">
+      <h1 class="visually-hidden">Витрина с играми</h1>
 
       <div class="site-content-wrapper">
+        <!-- SECTION popular game -->
+        <section class="content__game">
+          <h2 class="content__section-title">Популярные</h2>
+
+          <div class="slider__wrapper">
+            <ul class="content__game-list content__game-popular"></ul>
+
+            <div class="paddles">
+              <button class="slider__arrow slider__arrow-left"></button>
+              <button class="slider__arrow slider__arrow-right"></button>
+            </div>
+          </div>
+        </section>
+
         <!-- SECTION all game -->
         <section class="content__game">
           <div class="content__filter-wrapper">
@@ -148,18 +115,41 @@
 
             <ul class="content__filter">
               <li class="content__filter-item">
-                <input class="content__filter-ico content__filter-ico--refresh" type="checkbox" />
-                <input class="content__filter-ico content__filter-ico--down" type="checkbox" />
-                <input class="content__filter-ico content__filter-ico--up" type="checkbox" />
+                <input
+                  class="content__filter-ico content__filter-ico--refresh"
+                  type="checkbox"
+                />
+                <input
+                  class="content__filter-ico content__filter-ico--down"
+                  type="checkbox"
+                />
+                <input
+                  class="content__filter-ico content__filter-ico--up"
+                  type="checkbox"
+                />
               </li>
               <li class="content__filter-item">
-                <input class="modal__platform modal__platform--ps content__filter-ico--fix" type="checkbox" />
-                <input class="modal__platform modal__platform--xbox content__filter-ico--fix" type="checkbox" />
-                <input class="modal__platform modal__platform--steam content__filter-ico--fix" type="checkbox" />
-                <input class="modal__platform modal__platform--windows content__filter-ico--fix" type="checkbox" />
-                <input class="modal__platform modal__platform--mac content__filter-ico--fix" type="checkbox" />
+                <input
+                  class="modal__platform modal__platform--ps content__filter-ico--fix"
+                  type="checkbox"
+                />
+                <input
+                  class="modal__platform modal__platform--xbox content__filter-ico--fix"
+                  type="checkbox"
+                />
+                <input
+                  class="modal__platform modal__platform--steam content__filter-ico--fix"
+                  type="checkbox"
+                />
+                <input
+                  class="modal__platform modal__platform--windows content__filter-ico--fix"
+                  type="checkbox"
+                />
+                <input
+                  class="modal__platform modal__platform--mac content__filter-ico--fix"
+                  type="checkbox"
+                />
               </li>
-              
             </ul>
           </div>
 
@@ -167,46 +157,94 @@
           <ul class="content__game-list content__game-all-list"></ul>
         </section>
       </div>
-  </main>
-  <!-- END main content -->
+    </main>
+    <!-- END main content -->
 
-  <!-- BEGIN footer -->
-  <footer>
-  </footer>
-  <!-- END footer -->
-
-  <!-- add game modal begin -->
-  <div class="add-game-modal" id="add-game-modal" style="display:none">
-
-    <h2 class="modal__title">Добавить игру</h2>
-
-    <form class="modal__view">
-      <div class="modal__cover-wrapper">
-        <label class="modal__cover-added" for="pct"></label>
-        <input class="modal__cover" id="pct" name="cover" type="file" />
+    <!-- BEGIN footer -->
+    <footer class="footer">
+      <div class="site-content-wrapper">
+        <h3 class="footer__authors">amalmuslim & fayd</h3>
       </div>
-      <div class="modal__text-wrapper">
-        <input class="modal__field" id="name" name="name" placeholder="Название игры" value="" required>
+    </footer>
+    <!-- END footer -->
 
-        <div class="modal__footer">
-          <input class="modal__field modal__field-price" id="price" type="number" name="price" placeholder="Цена"
-            required>
-
-          <div class="modal__field-platform-wrapper">
-            <input class="modal__platform modal__platform--ps" type="checkbox" name="PlayStation" value="PlayStation" />
-            <input class="modal__platform modal__platform--xbox" type="checkbox" name="Xbox" value="Xbox" />
-            <input class="modal__platform modal__platform--steam" type="checkbox" name="SteamOS" value="SteamOS" />
-            <input class="modal__platform modal__platform--windows" type="checkbox" name="windows" value="Windows" />
-            <input class="modal__platform modal__platform--mac" type="checkbox" name="MacOs" value="MacOs" />
+    <!-- add game modal begin -->
+    <div class="add-game-modal" id="add-game-modal" style="display:none">
+      <h2 class="modal__title">Добавить игру</h2>
+      <form class="modal__view">
+        <div class="modal__cover-wrapper">
+          <label class="modal__cover-added" for="pct"></label>
+          <input class="modal__cover" id="pct" name="cover" type="file" />
+        </div>
+        <div class="modal__text-wrapper">
+          <input
+            class="modal__field"
+            id="name"
+            name="name"
+            placeholder="Название игры"
+            value=""
+            required
+          />
+          <div class="modal__footer">
+            <input
+              class="modal__field modal__field-price"
+              id="price"
+              type="number"
+              name="price"
+              placeholder="Цена"
+              required
+            />
+            <div class="modal__field-platform-wrapper">
+              <input
+                class="modal__platform modal__platform--ps"
+                type="checkbox"
+                name="PlayStation"
+                value="PlayStation"
+              />
+              <input
+                class="modal__platform modal__platform--xbox"
+                type="checkbox"
+                name="Xbox"
+                value="Xbox"
+              />
+              <input
+                class="modal__platform modal__platform--steam"
+                type="checkbox"
+                name="SteamOS"
+                value="SteamOS"
+              />
+              <input
+                class="modal__platform modal__platform--windows"
+                type="checkbox"
+                name="windows"
+                value="Windows"
+              />
+              <input
+                class="modal__platform modal__platform--mac"
+                type="checkbox"
+                name="MacOs"
+                value="MacOs"
+              />
+            </div>
+          </div>
+          <textarea
+            class="modal__field modal__field-description"
+            id="description"
+            name="description"
+            placeholder="Описание игры"
+            required
+          ></textarea>
+          <div class="modal__add-game-wrapper">
+            <button class="modal__add-game-btn" type="submit">Добавить</button>
           </div>
         </div>
+      </form>
+    </div>
 
-        <textarea class="modal__field modal__field-description" id="description" name="description"
-          placeholder="Описание игры" required></textarea>
-
-        <div class="modal__add-game-wrapper">
-          <button class="modal__add-game-btn" type="submit">Добавить</button>
-        </div>
+    <div class="modal">
+      <div class="modal-inner ">
+        <span data-modal-close></span>
+        <div class="modal-content"></div>
       </div>
 
     </form>
@@ -266,11 +304,17 @@
   <script type="text/javascript" src="js/app.js"></script>
   <script src="./js/lib/jquery.min.js"></script>
 
-  <!-- add game modal -->
-  <script src="./js/lib/vanila-modal.js"></script>
-  
+    <span class="content__go-top">
+      <i class="content__go-top-ico fas fa-caret-up"></i>
+    </span>
+    <!-- add game modal end -->
 
-  <!-- END scripts -->
-</body>
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
 
+    <!-- add game modal -->
+    <script src="./js/lib/vanila-modal.js"></script>
+    <!-- END scripts -->
+  </body>
 </html>

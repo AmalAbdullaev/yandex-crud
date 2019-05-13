@@ -1,0 +1,22 @@
+.rating-stars ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.rating-stars ul>li.star {
+  width: 1.1em;
+}
+
+.rating-stars ul>li.star>i.fas {
+  font-size: .98em;
+  color: #ddd;
+}
+
+.rating-stars ul>li.star.hover>i.fas {
+  color: $orange;
+}
+
+.rating-stars ul>li.star.selected>i.fas {
+  color: $orange;
+}

@@ -1,0 +1,72 @@
+.slider {
+  &__wrapper {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 130px;
+    height: 55px;
+    width: 30px;
+    border-radius: 3px;
+    color: $orange;
+    background-color: #fff;
+
+    &:hover {
+      color: #fff;
+      transition: 0.5s;
+      background-color: $orange;
+    }
+
+    &-left {
+      left: -45px;
+
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
+        font-size: 14px;
+        content: '\f0d9';
+      }
+    }
+
+    &-right {
+      right: -45px;
+
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
+        font-size: 14px;
+        content: '\f0da';
+      }
+    }
+  }
+}
+
+// glide slider for popular games section
+// .glide__slides {
+//   display: flex;
+//   padding-top: 5px;
+// }
+
+// .glide__slides-arrow {
+//   position: absolute;
+//   top: 38%;
+
+//   background-color: transparent;
+//   color: #ffb343;
+
+//   font-size: 45px;
+
+//   &:hover {
+//     color: #ffa41b;
+//   }
+
+//   &-left {
+//     left: -30px;
+//   }
+
+//   &-right {
+//     right: -30px;
+//   }
+// }
