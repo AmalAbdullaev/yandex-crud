@@ -1,9 +1,7 @@
 import {glide} from './lib/glide';
 import {ratingStars} from './lib/rating-stars';
 import listeners from './controller/listeners.controller';
-import {getListOfGames, getFavoriteGames} from './controller/main.controller';
-
-
+import {getListOfGames, getFavoriteGames, getPopularGames} from './controller/main.controller';
 import { addCover } from './lib/add-cover';
 
 
@@ -14,6 +12,8 @@ ratingStars();
 // get all games 
 getListOfGames();
 // getFavoriteGames();
+// popular games
+getPopularGames();
 //call listeners
 listeners();
 

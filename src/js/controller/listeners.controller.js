@@ -8,6 +8,11 @@ module.exports = function listeneres() {
   let input = document.querySelector('.site-header__search-input');
   let contentGameList = document.querySelector('.content__game-all-list');
   let clearSearchButton = document.querySelector('.site-header__clear-button');
+  let macPlatformFilter = document.querySelector('.modal__platform--mac');
+  let windowsPlatformFilter = document.querySelector('.modal__platform--windows');
+  let steamPlatformFilter = document.querySelector('.modal__platform--steam');
+  let psPlatformFilter = document.querySelector('.modal__platform--ps');
+  let xboxPlatformFilter = document.querySelector('.modal__platform--xbox');
 
   let modal = new VanillaModal();
 
@@ -85,8 +90,46 @@ module.exports = function listeneres() {
         });
       });
     }
-    // if(event.target.className === 'content__buy-game-button') {
-    //   modal.open(); 
-    // }
+
   };
+
+  macPlatformFilter.onclick = function() {
+    console.log('mac');
+    platformFilter();
+  };
+
+  windowsPlatformFilter.onclick = function() {
+    console.log('windows', windowsPlatformFilter.checked);
+    platformFilter();
+  };
+  steamPlatformFilter.onclick = function() {
+    platformFilter();
+  };
+  psPlatformFilter.onclick = function() {
+    console.log('ps');
+    platformFilter();
+  };
+  xboxPlatformFilter.onclick = function() {
+    console.log('xbox');
+    platformFilter();
+  };
+
+  function platformFilter() {
+    gameModel.getListOfGames().then(games => {
+      let result = [];
+      if(xboxPlatformFilter.checked)
+        games.filter(e => e.platform.includes('Xbox')).forEach(e => result.push(e));
+      if(windowsPlatformFilter.checked)
+        games.filter(e => e.platform.includes('Windows')).forEach(e => result.push(e));
+      if(macPlatformFilter.checked)
+        games.filter(e => e.platform.includes('MacOs')).forEach(e => result.push(e));
+      if(psPlatformFilter.checked)
+        games.filter(e => e.platform.includes('PlayStation')).forEach(e => result.push(e));
+      if(steamPlatformFilter.checked)
+        games.filter(e => e.platform.includes('SteamOS')).forEach(e => result.push(e));
+
+      if(result.length > 0) renderGames('.content__game-all-list', result);
+      else renderGames('.content__game-all-list', games);
+    });
+  }
 };

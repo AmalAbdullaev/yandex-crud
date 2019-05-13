@@ -34,12 +34,8 @@ function getPopularGames() {
       let index = filteredGames.indexOf(randomElement);
       if (index !== -1) filteredGames.splice(index, 1);
     }
-
-    console.log(result);
     renderPopularGames('.content__game-popular',result);
   });
 }
 
-getPopularGames();
-
-module.exports = { getListOfGames,getFavoriteGames};
+module.exports = { getListOfGames,getFavoriteGames,getPopularGames};
