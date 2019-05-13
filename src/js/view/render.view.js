@@ -28,4 +28,13 @@ function renderGames(classSelector, elementToRender) {
   document.querySelector(classSelector).appendChild(fragment);
 }
 
-module.exports = { renderGames };
+
+function renderPopularGames(classSelector, elementToRender) {
+  document.querySelector(classSelector).innerHTML = '';
+  elementToRender = Array.isArray(elementToRender) ? elementToRender : [elementToRender];
+
+  let fragment = browserJSEngine(elementToRender.map(allGameTemplate));
+  document.querySelector(classSelector).appendChild(fragment);
+}
+
+module.exports = { renderGames, renderPopularGames };
