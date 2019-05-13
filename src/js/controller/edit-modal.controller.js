@@ -1,8 +1,10 @@
 
 import {GameModel} from '../model/game.model';
+import {renderGames} from '../view/render.view';
 
 
-module.exports = function initEditModalController(modal) {
+module.exports = function initEditModalController(modal,gameId) {
+
   let gameModel = new GameModel();
   let editGameModal = document.querySelector('#edit-game-modal');
 
@@ -18,8 +20,23 @@ module.exports = function initEditModalController(modal) {
   let formPlatformMac =  editGameForm.querySelector('.modal__platform--mac');
   let formPlatformPlayStation =  editGameForm.querySelector('.modal__platform--ps');
 
- 
-  
+
+  gameModel.getGame(gameId).then(g => {
+    formTitle.value = g.title;
+    if(g.platform.includes('Windows'))
+      formPlatformWindows.checked = true;
+    if(g.platform.includes('PlayStation'))
+      formPlatformPlayStation.checked = true;
+    if(g.platform.includes('Xbox'))
+      formPlatformXbox.checked = true;
+    if(g.platform.includes('MacOs'))
+      formPlatformMac.checked = true;
+    if(g.platform.includes('SteamOS'))
+      formPlatformSteam.checked = true;
+    formPrice.value = g.price;
+    formDescription.value = g.description;
+  });
+
 
   editGameForm.onsubmit = function(event) {
 
@@ -37,8 +54,21 @@ module.exports = function initEditModalController(modal) {
     if(formPlatformSteam.checked)
       formPlatform.push(formPlatformSteam.value);
     // console.log(formTitle.value,formPlatform,formPrice.value,formDescription.value);
-    gameModel.addGame(formTitle.value,formPlatform,formPrice.value,formDescription.value).then(result => {
+
+
+    let game = {
+      id: gameId,
+      name: formTitle.value,
+      platform: formPlatform,
+      price: formPrice.value,
+      description: formDescription.value
+    };
+
+    gameModel.editGame(game).then(result => {
       console.log(result);
+      gameModel.getListOfGames().then(games => {
+        renderGames('.content__game-all-list',games);
+      });
     });
     modal.close();
   };

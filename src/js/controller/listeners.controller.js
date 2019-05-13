@@ -65,8 +65,9 @@ module.exports = function initListeneres() {
     }
 
     if(event.target.className === 'content__edit-game fas fa-pen') {
-      console.log('frf');
-      initEditModalController(modal);
+      let gameId = +event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
+      console.log(typeof gameId);
+      initEditModalController(modal,gameId);
     }
 
   };
