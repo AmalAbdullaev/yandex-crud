@@ -6,22 +6,20 @@ import {getListOfGames, getFavoriteGames} from './controller/main.controller';
 import { addCover } from './lib/add-cover';
 import { pureSlider } from './lib/pure-slider';
 
+import { goTop } from './lib/go-top';
+
 // 5stars rating
 ratingStars();
-
 // get all games 
 getListOfGames();
-
 // getFavoriteGames();
-
 //call listeners
 listeners();
-
 addCover();
-
 // popular games slider
 // glide();
 pureSlider();
+goTop();
 
 // gameAPI.getGame(2).then(gameAPI => {
 //   console.log(gameAPI || 'gameAPI not found' );
