@@ -110,7 +110,7 @@ module.exports = function gamePopularJSTemplate(game) {
           // bookmark
         {
           tag: 'input',
-          cls: 'content__bookmark',
+          cls: ['content__bookmark', 'content__bookmark-popular'],
           attrs: {
             type: 'checkbox',
             title: 'Добавить игру в избранное',

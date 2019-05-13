@@ -8,7 +8,7 @@
   }
 
   &__game {
-    margin-top: 20px;
+    margin-top: 25px;
 
     padding: 15px 7px 2px 7px;
     border-radius: 3px;
@@ -93,7 +93,6 @@
     }
   }
 
-
   &__edit-game {
     position: absolute;
     top: 7px;
@@ -101,7 +100,7 @@
     text-decoration: none;
     color: #c9c9c9;
     text-shadow: 0 0 1px #616161;
-    
+
     &:hover {
       text-shadow: none;
       color: #ff3333;
@@ -154,6 +153,10 @@
     &:hover:before {
       color: #ff3333;
     }
+  }
+
+  &__bookmark-popular {
+    right: 27px !important;
   }
 
   // rating
@@ -242,11 +245,15 @@
     }
   }
 
-  // POPULAR
+  // POPULAR SECTION
   &__game-popular {
     display: flex;
 
-    overflow-x: auto;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
     padding-top: 5px;
 
     &-item {
@@ -272,10 +279,10 @@
       }
 
       &-info-wrapper {
-        min-width: 192px;
+        min-width: 200px;
         max-width: 192px;
 
-        padding: 15px 15px 15px 7px;
+        padding: 15px 20px 15px 7px;
       }
 
       &-content {
@@ -294,7 +301,7 @@
     }
   }
 
-  // ALL GAMES
+  // ALL GAMES SECTION
   &__game-all {
     font-size: 14px;
 
@@ -316,6 +323,7 @@
     }
   }
 
+  // filters
   &__filter {
     display: flex;
     margin-left: auto;
@@ -330,12 +338,7 @@
       font-size: 20px;
     }
 
-    &-item {
-      
-    }
-
     &-ico {
-
       width: 27px;
       height: 20px;
 
@@ -367,7 +370,7 @@
         transition: 0.3s;
         color: $orange;
       }
-  
+
       &:hover:before {
         transition: 0.3s;
         color: $orange;
@@ -377,74 +380,7 @@
         font-size: 22px !important;
         width: 27px !important;
         height: 20px !important;
-
       }
     }
-
   }
-}
-
-// glide slider for popular games section
-.glide__slides {
-  display: flex;
-  padding-top: 5px;
-}
-
-.glide__slides-arrow {
-  position: absolute;
-  top: 38%;
-
-  background-color: transparent;
-  color: #ffb343;
-
-  font-size: 45px;
-
-  &:hover {
-    color: #ffa41b;
-  }
-
-  &-left {
-    left: -30px;
-  }
-
-  &-right {
-    right: -30px;
-  }
-}
-
-
-
-
-// надо будет тут все нормально назвать
-/* Rating Star Widgets Style */
-.rating-stars ul {
-  // display: -webkit-box;
-  // display: -ms-flexbox;
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-
-  // -moz-user-select: none;
-  // -webkit-user-select: none;
-}
-
-.rating-stars ul>li.star {
-  // margin: -.02em;
-  width: 1.1em;
-}
-
-/* Idle State of the stars */
-.rating-stars ul>li.star>i.fas {
-  font-size: .98em;
-  color: #ddd;
-}
-
-/* Hover state of the stars */
-.rating-stars ul>li.star.hover>i.fas {
-  color: #FFCC36;
-}
-
-/* Selected state of the stars */
-.rating-stars ul>li.star.selected>i.fas {
-  color: $orange;
 }

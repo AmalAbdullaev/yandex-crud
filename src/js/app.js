@@ -4,9 +4,7 @@ import listeners from './controller/listeners.controller';
 import {getListOfGames, getFavoriteGames} from './controller/main.controller';
 
 import { addCover } from './lib/add-cover';
-
-// popular games slider
-// glide();
+import { pureSlider } from './lib/pure-slider';
 
 // 5stars rating
 ratingStars();
@@ -15,10 +13,15 @@ ratingStars();
 getListOfGames();
 
 // getFavoriteGames();
+
 //call listeners
 listeners();
 
 addCover();
+
+// popular games slider
+// glide();
+pureSlider();
 
 // gameAPI.getGame(2).then(gameAPI => {
 //   console.log(gameAPI || 'gameAPI not found' );
