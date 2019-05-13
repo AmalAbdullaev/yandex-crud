@@ -1,5 +1,7 @@
 
 import {GameModel} from '../model/game.model';
+import {renderGames} from '../view/render.view';
+
 
 module.exports = function initAddModalController(modal) {
   let gameModel = new GameModel();
@@ -33,8 +35,11 @@ module.exports = function initAddModalController(modal) {
     if(formPlatformSteam.checked)
       formPlatform.push(formPlatformSteam.value);
     // console.log(formTitle.value,formPlatform,formPrice.value,formDescription.value);
-    gameModel.addGame(formTitle.value,formPlatform,formPrice.value,formDescription.value).then(result => {
+    gameModel.addGame(formTitle.value,formPlatform,formPrice.value,formDescription.value,'cover').then(result => {
       console.log(result);
+      gameModel.getListOfGames().then(games => {
+        renderGames('.content__game-all-list',games);
+      });
     });
     modal.close();
   };

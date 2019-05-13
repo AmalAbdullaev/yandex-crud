@@ -70,6 +70,17 @@ module.exports = function initListeneres() {
       initEditModalController(modal,gameId);
     }
 
+    if(event.target.className === 'content__delete-game fas fa-trash') {
+      let gameId = +event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
+      console.log(typeof gameId);
+      gameModel.deleteGame(gameId).then(result => {
+        console.log(result);
+        gameModel.getListOfGames().then(games => {
+          renderGames('.content__game-all-list', desc(asc(platformFilter(games))));
+        });
+      });
+    }
+
   };
 
   macPlatformFilter.onclick = function() {

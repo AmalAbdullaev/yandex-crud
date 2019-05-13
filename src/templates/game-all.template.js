@@ -29,7 +29,6 @@ module.exports = function gameAllJSTemplate(game) {
           {
             tag: 'a',
             attrs: {
-              href: '',
             },
             // delete game
             content: {
