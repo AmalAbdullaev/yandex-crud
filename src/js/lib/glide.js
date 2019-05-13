@@ -2,12 +2,12 @@ import Glide from '@glidejs/glide';
 
 export function glide() {
   new Glide('.glide', {
-    type: 'slider',
+    type: 'carousel',
     perView: 3.5,
-    // autoplay: 2000,
-    // hoverpause: true,
-    // keyboard: true,
-    perTouch: 3,
+    autoplay: 2000,
+    hoverpause: true,
+    keyboard: true,
+    perTouch: 5,
     gap: 15,
     peek: {
       before: 100,

@@ -167,6 +167,7 @@
     &-stars {
       display: flex;
       align-items: center;
+      margin-right: 3px;
     }
 
     &-avg {
@@ -244,6 +245,9 @@
   // POPULAR
   &__game-popular {
     display: flex;
+
+    overflow-x: auto;
+    padding-top: 5px;
 
     &-item {
       display: flex;

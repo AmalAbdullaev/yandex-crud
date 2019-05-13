@@ -3,16 +3,17 @@ import {ratingStars} from './lib/rating-stars';
 import listeners from './controller/listeners.controller';
 import {getListOfGames, getFavoriteGames} from './controller/main.controller';
 
-
 import { addCover } from './lib/add-cover';
-
 
 // popular games slider
 // glide();
+
 // 5stars rating
 ratingStars();
+
 // get all games 
 getListOfGames();
+
 // getFavoriteGames();
 //call listeners
 listeners();
