@@ -20,9 +20,9 @@ module.exports = function initListeneres() {
   let descFilter = document.querySelector('.content__filter-ico--up');
   let ascFilter = document.querySelector('.content__filter-ico--down');
   let refresh = document.querySelector('.content__filter-ico--refresh');
+
   //init add modal 
   initAddModalController(modal);
-  
 
 
   searchButton.onclick = function() {

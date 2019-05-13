@@ -1,7 +1,7 @@
 import {glide} from './lib/glide';
 import {ratingStars} from './lib/rating-stars';
 import initListeners from './controller/listeners.controller';
-import {getListOfGames, getFavoriteGames, getPopularGames} from './controller/main.controller';
+import {getListOfGames, getPopularGames} from './controller/main.controller';
 import { addCover } from './lib/add-cover';
 
 
