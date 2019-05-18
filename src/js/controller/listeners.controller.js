@@ -111,21 +111,22 @@ module.exports = function initListeneres() {
   };
 
   function platformFilter(games) {
-    let result = [];
-    if(xboxPlatformFilter.checked)
-      games.filter(e => e.platform.includes('Xbox')).forEach(e => result.push(e));
-    if(windowsPlatformFilter.checked)
-      games.filter(e => e.platform.includes('Windows')).forEach(e => result.push(e));
-    if(macPlatformFilter.checked)
-      games.filter(e => e.platform.includes('MacOs')).forEach(e => result.push(e));
-    if(psPlatformFilter.checked)
-      games.filter(e => e.platform.includes('PlayStation')).forEach(e => result.push(e));
-    if(steamPlatformFilter.checked)
-      games.filter(e => e.platform.includes('SteamOS')).forEach(e => result.push(e));
-
-    if(result.length === 0)
-      result = games;
-    return result;
+    if(xboxPlatformFilter.checked) {
+      games = games.filter(e => e.platform.includes('Xbox'));
+    }
+    if(windowsPlatformFilter.checked) {
+      games = games.filter(e => e.platform.includes('Windows'));
+    }
+    if(macPlatformFilter.checked) {
+      games = games.filter(e => e.platform.includes('MacOs'));
+    }
+    if(psPlatformFilter.checked) {
+      games = games.filter(e => e.platform.includes('PlayStation'));
+    }
+    if(steamPlatformFilter.checked) {
+      games = games.filter(e => e.platform.includes('SteamOS'));
+    }
+    return games;
   }
 
   ascFilter.onclick = function() {
